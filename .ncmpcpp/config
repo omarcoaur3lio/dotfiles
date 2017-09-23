@@ -1,0 +1,132 @@
+#::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#                                                              :: 
+#         █▒██▒   ▓██▒  ██▓█▓  █▓██    ▓██▒  █▓██   █▓██       ::
+#         █▓ ▒█  ▓█  ▓  █▒█▒█  █▓ ▓█  ▓█  ▓  █▓ ▓█  █▓ ▓█      ::
+#         █   █  █░     █ █ █  █   █  █░     █   █  █   █      ::
+#         █   █  █      █ █ █  █   █  █      █   █  █   █      ::
+#         █   █  █░     █ █ █  █   █  █░     █   █  █   █      ::
+#         █   █  ▓█  ▓  █ █ █  █▓ ▓█  ▓█  ▓  █▓ ▓█  █▓ ▓█      ::
+#         █   █   ▓██▒  █ █ █  █▓██    ▓██▒  █▓██   █▓██       ::
+#                              █             █      █          ::
+#                              █             █      █          ::
+#                              █             █      █          ::
+#                                                              ::
+#       by: asarch                                             :: 
+#                                                              :: 
+#::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+# connection settings 
+
+mpd_host = localhost
+mpd_port = 6600
+mpd_crossfade_time = 2
+visualizer_fifo_path = /tmp/mpd.fifo
+
+visualizer_output_name = "Visualizer feed"
+visualizer_in_stereo = no
+visualizer_sync_interval = 30
+visualizer_type = spectrum
+visualizer_look = ●▋
+visualizer_color = white
+#visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
+
+# delays 
+playlist_disable_highlight_delay = 1
+message_delay_time = 1
+
+# song format 
+# For a song format you can use:
+#
+# %l - length
+# %f - filename
+# %D - directory
+# %a - artist
+# %A - album artist
+# %t - title
+# %b - album
+# %y - date
+# %n - track number (01/12 -> 01)
+# %N - full track info (01/12 -> 01/12)
+# %g - genre
+# %c - composer
+# %p - performer
+# %d - disc
+# %C - comment
+# %P - priority
+# $R - begin right alignment
+
+# - 0 - default window color (discards all other colors)
+# - 1 - black
+# - 2 - red
+# - 3 - green
+# - 4 - yellow
+# - 5 - blue
+# - 6 - magenta
+# - 7 - cyan
+# - 8 - white
+# - 9 - end of current color
+# - b - bold text
+# - u - underline text
+# - r - reverse colors
+# - a - use alternative character set
+
+song_list_format = "{{%t - %a}|{%f}}{$R%l}" 
+
+song_status_format = "{{%t{ "%b"{ (%y)}} - }{%a$/b}}|{$b%f$/b} "
+
+song_library_format = "{%n > }{%t}|{%f}"
+
+now_playing_prefix = "$8●$/b$9 $b$2 "
+
+now_playing_suffix = "$/b$9"
+
+song_window_title_format = {%t - }{%a}|{%f}
+
+browser_sort_mode = name
+
+# columns settings 
+# - r - column will be right aligned
+# - E - if tag is empty, empty tag marker won't be displayed
+
+song_columns_list_format = (30)[blue]{t|f:Title} (30)[red]{a} (20)[red]{b} (7f)[red]{l}
+
+# various settings 
+
+playlist_display_mode = "columns" 
+discard_colors_if_item_is_selected = yes
+autocenter_mode = yes
+centered_cursor = yes
+
+progressbar_look = "─╼ "
+header_visibility = no
+statusbar_visibility = yes
+titles_visibility = no
+follow_now_playing_lyrics = no
+
+jump_to_now_playing_song_at_start = yes
+display_bitrate = no
+
+mouse_support = yes
+
+tags_separator = " "
+
+external_editor = nano
+
+# Colors
+colors_enabled = yes
+empty_tag_color = red
+state_line_color = red
+state_flags_color = black
+main_window_color = white
+color1 = red
+color2 = red
+current_item_prefix = "$(red)$r"
+current_item_suffix = "$/r$(end)"
+progressbar_color = black
+progressbar_elapsed_color = cyan
+statusbar_color = red
+alternative_ui_separator_color = red
+#current_item_inactive_column_prefix = white
+#current_item_inactive_column_suffix = white
+window_border_color = red
+active_window_border = black

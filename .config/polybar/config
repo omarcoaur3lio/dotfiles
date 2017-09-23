@@ -1,0 +1,342 @@
+
+[colors]
+background          = #111213
+foreground          = #EDEDED
+black               = #000
+white               = #fff
+green               = #01DE95 
+lime                = #ADFE04
+teal                = #00EDFF
+orange              = #FA6608
+red                 = #E43B3B
+disable             = #55
+
+
+
+[bar/top]
+monitor             = ${env:MONITOR:LVDS1}
+width               = 100%
+height              = 19
+fixed-center        = true
+background          = ${colors.background}
+foreground          = ${colors.foreground}
+
+wm-restack          = bspwm
+override-redirect   = false
+enable-ipc          = true
+locale              = pt_BR.UTF-8
+
+
+padding-right       = 2
+padding-left        = 2
+
+module-margin       = 3
+spacing             = 2
+
+
+font-0              = NotoSans-Regular:size=7;-1
+font-1              = MaterialIcons:size=8;0
+font-2              = Termsynu:size=8:antialias=false;-2
+font-3              = FontAwesome:size=8;0
+font-4              = Octicons-Regular:size=8;0
+
+
+modules-left        = powermenu mpd spotify
+modules-center      = date
+modules-right       = weather volume wireless-network battery
+
+;-------------------------------------------------------------------
+
+
+[bar/bottom]
+monitor             = ${env:MONITOR:LVDS1}
+width               = 100%
+height              = 26
+fixed-center        = true
+bottom              = true
+background          = ${colors.background}
+foreground          = ${colors.foreground}
+wm-restack          = bspwm
+override-redirect   = false
+enable-ipc          = true
+locale              = pt_BR.UTF-8
+
+
+padding-right       = 2
+padding-left        = 2
+
+module-margin       = 3
+spacing             = 2
+
+
+font-0              = NotoSans-Regular:size=7;2
+font-1              = MaterialIcons:size=8;2    
+font-2              = Termsynu:size=8:antialias=false;2
+font-3              = FontAwesome:size=8;2
+font-4              = octicons:size=8;0
+font-5              = ionicons:size=8;0
+
+modules-left        = backlight wired-network pkg
+modules-center      = bspwm
+modules-right       = memory
+
+
+
+#::::::::::::::::::::::::::::::::::::::::::::::::::
+#                                                ::
+#                  Module config                 ::
+#                                                ::
+#::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+[module/powermenu]
+type                                = custom/menu
+
+label-open                          = 
+label-open-foreground               = ${colors.foreground}
+label-close                         = 
+label-close-foreground              = ${colors.foreground}
+
+menu-0-0-margin = 3
+menu-0-1-margin = 3
+menu-0-2-margin = 3
+
+menu-0-0                            = 
+menu-0-0-foreground                 = ${colors.teal}
+menu-0-0-exec                       = bspc quit -1
+
+menu-0-1                            = 
+menu-0-1-foreground                 = ${colors.teal}
+menu-0-1-exec                       = reboot
+
+menu-0-2                            = 
+menu-0-2-foreground                 = ${colors.teal}
+menu-0-2-exec                       = poweroff
+
+menu-1-0                            = Cancel
+menu-1-0-exec                       = menu_open-0
+
+
+[module/mpd]
+type = internal/mpd
+format-online = <icon-prev> <icon-stop> <toggle> <icon-next> <icon-repeat> <icon-random> <bar-progress>  <label-song> %{B-}
+
+toggle-on-foreground                = ${colors.teal}
+toggle-off-foreground               = #55
+label-song-maxlen                   = 45
+
+icon-play                           = 
+icon-pause                          = 
+icon-stop                           = 
+icon-prev                           = 
+icon-next                           = 
+icon-random                         = 
+icon-repeat                         = 
+
+label-song-foreground               = ${colors.foreground}
+bar-progress-width                  = 20
+bar-progress-indicator              = 
+bar-progress-indicator-foreground   = ${colors.teal}
+bar-progress-indicator-font         = 3
+bar-progress-fill                   = ─
+bar-progress-fill-foreground        = ${colors.teal}
+bar-progress-fill-font              = 2
+bar-progress-empty                  = ─
+bar-progress-empty-foreground       = ${colors.disable}
+bar-progress-empty-font             = 2
+bar-progress-format                 = %{A4:mpdseek+2: A5:mpdseek-2:}%fill%%indicator%%empty%%{A A}
+
+[module/spotify]
+type                                = custom/script
+exec                                = ~/.config/polybar/scripts/spotify.sh %artist% - %title%
+tail                                = true
+interval                            = 2
+format-prefix                       = "   "
+format-prefix-foreground            = ${colors.green}
+
+
+[module/date]
+type                                = internal/date 
+date-alt                            = %%{F#fff}   %%{F#fff}%H:%M%%{F-}
+date                                =  %{F#00EDFF}  %%{F#fff}%A, %d %B %%{F#fff}%H:%M%%{F-}
+
+
+[module/battery]
+type                                = internal/battery
+full-at                             = 98
+format-charging                     = <animation-charging><label-charging>
+format-discharging                  = <ramp-capacity><label-discharging>
+format-full                         = <ramp-capacity><label-full>
+label-discharging-foreground        = ${colors.foreground}
+label-charging-foreground           = ${colors.foreground}
+label-full-foreground               = ${colors.foreground}
+ramp-capacity-0                     = 
+ramp-capacity-0-foreground          = ${colors.red}
+ramp-capacity-1                     = 
+ramp-capacity-1-foreground          = ${colors.orange}
+ramp-capacity-2                     = 
+ramp-capacity-2-foreground          = ${colors.teal}
+ramp-capacity-3                     = 
+ramp-capacity-3 -foreground          = ${colors.teal}
+ramp-capacity-4                     = 
+ramp-capacity-4-foreground          = ${colors.teal}
+bar-capacity-width                  = 10
+bar-capacity-format                 = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
+bar-capacity-fill                   = █
+bar-capacity-fill-foreground        = ${colors.foreground}
+bar-capacity-fill-font              = 3
+bar-capacity-empty                  = █
+bar-capacity-empty-font             = 3
+bar-capacity-empty-foreground       = ${colors.foreground}
+animation-charging-0                = 
+animation-charging-1                = 
+animation-charging-2                = 
+animation-charging-3                = 
+animation-charging-4                = 
+animation-charging-foreground       = ${colors.foreground}
+animation-charging-framerate        = 750
+
+[module/wireless-network]
+type                                = internal/network
+interface                           = wlp3s0
+interval                            = 3.0
+ping-interval                       = 10
+format-connected                    = <ramp-signal> <label-connected>
+label-connected                     = %essid%
+label-connected-foreground          = ${colors.foreground}
+label-disconnected                  =    not connected
+label-disconnected-foreground       = ${colors.disable}
+ramp-signal-0                       = 
+ramp-signal-1                       = 
+ramp-signal-2                       = 
+ramp-signal-3                       = 
+ramp-signal-4                       = 
+ramp-signal-foreground              = ${colors.teal}
+animation-packetloss-0              = 
+animation-packetloss-0-foreground   = ${colors.teal}
+animation-packetloss-1              = 
+animation-packetloss-1-foreground  = ${colors.teal}
+animation-packetloss-framerate      = 500
+
+[module/volume]
+type                                = internal/volume
+format-volume                       = <ramp-volume><label-volume>
+label-volume-foreground             = ${colors.foreground}
+label-muted                         =   muted
+label-muted-foreground              = ${colors.disable}
+ramp-volume-foreground              = ${colors.teal}
+ramp-volume-0                       = 
+ramp-volume-1                       = 
+ramp-volume-2                       = 
+ramp-volume-3                       = 
+
+[module/weather]
+type                                = custom/script
+interval                            = 10
+format                              = <label> 
+label-foreground                    = ${colors.foreground}
+exec                                = ~/.config/polybar/scripts/weather.py
+
+[module/backlight]
+type                                = internal/xbacklight
+card                                = intel_backlight
+format                              = <ramp><bar>
+label-foreground                    = ${colors.foreground}
+ramp-0                              = 
+ramp-1                              = 
+ramp-2                              = 
+ramp-foreground                     = ${colors.teal}
+bar-width                           = 13
+bar-indicator                       = |
+bar-indicator-font                  = 3
+bar-indicator-foreground            = ${colors.teal}
+bar-fill                            = ─
+bar-fill-font                       = 3
+bar-fill-foreground                 = ${colors.teal}
+bar-empty                           = ─
+bar-empty-font                      = 3
+bar-empty-foreground                = ${colors.disable}
+
+[module/wired-network]
+type                                = internal/network
+interface                           = enp4s0f2
+interval                            = 3.0 
+label-connected                     =    %{T3}%local_ip%%{T-}
+label-disconnected-foreground       = ${colors.disable}
+
+[module/pkg]
+type                                = custom/script
+interval                            = 1200 
+format                              = <label> 
+format-foreground                   = ${colors.foreground}
+label                               = "%output:0:30%"
+exec                                = .config/polybar/scripts/pkg.sh
+exec-if                             = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+
+
+[module/bspwm]
+type                                = internal/bspwm
+index-sort                          = true
+ws-icon-0                           = term;
+ws-icon-1                           = www;
+ws-icon-2                           = dev;
+ws-icon-3                           = play;
+ws-icon-4                           = chat;
+ws-icon-5                           = virt;
+ws-icon-6                           = git;
+ws-icon-default                     = 
+format                              = <label-state> <label-mode>  
+label-dimmed-underline              = tray-transparent
+label-focused                       = %icon%
+label-focused-foreground            = ${colors.teal}
+label-focused-background            = tray-transparent
+label-focused-underline             = tray-transparent
+label-focused-font                  = 3
+label-focused-padding               = 3
+label-occupied                      = %icon%
+label-occupied-foreground           = ${colors.foreground}
+label-occupied-underline            = tray-transparent
+label-occupied-font                 = 3
+label-occupied-padding              = 3
+label-urgent                        = %icon%
+label-urgent-foreground             = ${colors.green}
+label-urgent-background             = tray-transparent
+label-urgent-underline              = tray-transparent
+label-urgent-font                   = 3
+label-urgent-padding                = 3
+label-empty                         = %icon%
+label-empty-foreground              = ${colors.disable}
+label-empty-font                    = 3
+label-empty-padding                 = 3
+label-monocle                       = 
+label-monocle-underline             = tray-transparent
+label-monocle-background            = try-transparent
+label-monocle-padding               = 2
+label-locked                        = 
+label-locked-foreground             = ${colors.red}
+label-locked-underline              = ${module/bspwm.label-monocle-underline}
+label-locked-padding                = ${module/bspwm.label-monocle-padding}
+label-sticky                        = 
+label-sticky-foreground             = ${colors.orange}
+label-sticky-underline              = ${module/bspwm.label-monocle-underline}
+label-sticky-padding                = ${module/bspwm.label-monocle-padding}
+label-private                       = 
+label-private-foreground            = ${colors.red}
+label-private-underline             = ${module/bspwm.label-monocle-underline}
+label-private-padding               = ${module/bspwm.label-monocle-padding}
+
+[module/memory]
+type                                = internal/memory
+interval                            = 3
+format                              = <label> <bar-used>
+label                               = RAM %gb_used%/%gb_free%
+label-foreground                    = ${colors.foreground}
+bar-used-indicator                  =
+bar-used-width                      = 30
+bar-used-foreground-0               = ${colors.teal}
+bar-used-foreground-1               = ${colors.teal}
+bar-used-foreground-2               = ${colors.teal}
+bar-used-foreground-3               = ${colors.teal}
+bar-used-fill                       = 
+bar-used-empty                      = 
+bar-used-empty-foreground           = ${colors.disable}

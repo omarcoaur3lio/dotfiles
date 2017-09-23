@@ -1,0 +1,16 @@
+
+# Show tor statistics
+alias torstat='sudo proxychains python2 /home/marco/Programas/PenTest/TorStat/TorStat.py'
+
+# Rec to screen
+alias screen_recorder='ffmpeg -f x11grab -video_size 1366x768 -i $DISPLAY -f alsa -i default -c:v ffvhuff -c:a flac Arch.mkv'
+
+# Show files ans directories
+alias ls='ls -FX --format=across --color=auto'
+alias ls='ls --color'
+
+# Restart Xresources config
+alias xresources-restart='xrdb -merge ./.Xresources'
+
+# Restart vmware modules
+#sudo /etc/init.d/vmware start
