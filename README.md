@@ -6,7 +6,7 @@
 
 # Preview
 
-![preview](https://i.imgur.com/OxSAmJU.gif)
+![preview](https://i.imgur.com/OxSAmJU.gifv)
 
 Requirements
 ------------
