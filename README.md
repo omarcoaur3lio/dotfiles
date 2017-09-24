@@ -6,7 +6,7 @@
 
 # Preview
 
-![preview](./arch.gif "preview")
+![preview](https://i.imgur.com/OxSAmJU.gif)
 
 Requirements
 ------------
@@ -42,16 +42,16 @@ This is a theme for LightDM Webkit2 (`lightdm-webkit2-greeter`).
 References
 ----------
 
-> [Polybar](https://github.com/jaagr/polybar/wiki)
-> [dmenu](https://wiki.archlinux.org/index.php/dmenu)
-> [URXVT](https://wiki.archlinux.org/index.php/rxvt-unicode)
-> [Neofetch](https://github.com/dylanaraps/neofetch)
-> [MPD](https://www.musicpd.org/)
-> [NCMPCPP](https://wiki.archlinux.org/index.php/ncmpcpp)
-> [Sublime Text](https://www.sublimetext.com/)
-> [Compton](https://wiki.archlinux.org/index.php/Compton)
-> [Font Awesome](http://fontawesome.io/)
-> [Weechat](https://weechat.org/)
+* [Polybar](https://github.com/jaagr/polybar/wiki)
+* [dmenu](https://wiki.archlinux.org/index.php/dmenu)
+* [URXVT](https://wiki.archlinux.org/index.php/rxvt-unicode)
+* [Neofetch](https://github.com/dylanaraps/neofetch)
+* [MPD](https://www.musicpd.org/)
+* [NCMPCPP](https://wiki.archlinux.org/index.php/ncmpcpp)
+* [Sublime Text](https://www.sublimetext.com/)
+* [Compton](https://wiki.archlinux.org/index.php/Compton)
+* [Font Awesome](http://fontawesome.io/)
+* [Weechat](https://weechat.org/)
 
 
 
