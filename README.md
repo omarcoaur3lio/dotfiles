@@ -52,6 +52,7 @@ References
 * [Compton](https://wiki.archlinux.org/index.php/Compton)
 * [Font Awesome](http://fontawesome.io/)
 * [Weechat](https://weechat.org/)
+* [Morgareth](https://github.com/morgareth99)
 
 
 
