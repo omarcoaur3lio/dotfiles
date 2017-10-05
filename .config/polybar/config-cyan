@@ -5,7 +5,6 @@ foreground          = #EDEDED
 black               = #000
 white               = #fff
 green               = #01DE95 
-light-green 		= #13E5A8
 lime                = #ADFE04
 teal                = #00EDFF
 orange              = #FA6608
@@ -48,6 +47,7 @@ modules-right       = weather volume wireless-network battery
 
 ;-------------------------------------------------------------------
 
+
 [bar/bottom]
 monitor             = ${env:MONITOR:LVDS1}
 width               = 100%
@@ -76,7 +76,7 @@ font-3              = FontAwesome:size=8;2
 font-4              = octicons:size=8;0
 font-5              = ionicons:size=8;0
 
-modules-left        = backlight bitcoin wired-network pkg
+modules-left        = backlight wired-network pkg
 modules-center      = bspwm
 modules-right       = memory
 
@@ -93,7 +93,7 @@ modules-right       = memory
 type                                = custom/menu
 
 label-open                          = 
-label-open-foreground               = ${colors.light-green}
+label-open-foreground               = ${colors.foreground}
 label-close                         = 
 label-close-foreground              = ${colors.foreground}
 
@@ -102,15 +102,15 @@ menu-0-1-margin = 3
 menu-0-2-margin = 3
 
 menu-0-0                            = 
-menu-0-0-foreground                 = ${colors.light-green}
+menu-0-0-foreground                 = ${colors.teal}
 menu-0-0-exec                       = bspc quit -1
 
 menu-0-1                            = 
-menu-0-1-foreground                 = ${colors.light-green}
+menu-0-1-foreground                 = ${colors.teal}
 menu-0-1-exec                       = reboot
 
 menu-0-2                            = 
-menu-0-2-foreground                 = ${colors.light-green}
+menu-0-2-foreground                 = ${colors.teal}
 menu-0-2-exec                       = poweroff
 
 menu-1-0                            = Cancel
@@ -121,7 +121,7 @@ menu-1-0-exec                       = menu_open-0
 type = internal/mpd
 format-online = <icon-prev> <icon-stop> <toggle> <icon-next> <icon-repeat> <icon-random> <bar-progress>  <label-song> %{B-}
 
-toggle-on-foreground                = ${colors.light-green}
+toggle-on-foreground                = ${colors.teal}
 toggle-off-foreground               = #55
 label-song-maxlen                   = 45
 
@@ -136,10 +136,10 @@ icon-repeat                         = 
 label-song-foreground               = ${colors.foreground}
 bar-progress-width                  = 20
 bar-progress-indicator              = 
-bar-progress-indicator-foreground   = ${colors.light-green}
+bar-progress-indicator-foreground   = ${colors.teal}
 bar-progress-indicator-font         = 3
 bar-progress-fill                   = ─
-bar-progress-fill-foreground        = ${colors.light-green}
+bar-progress-fill-foreground        = ${colors.teal}
 bar-progress-fill-font              = 2
 bar-progress-empty                  = ─
 bar-progress-empty-foreground       = ${colors.disable}
@@ -152,13 +152,13 @@ exec                                = ~/.config/polybar/scripts/spotify.sh %arti
 tail                                = true
 interval                            = 2
 format-prefix                       = "   "
-format-prefix-foreground            = ${colors.light-green}
+format-prefix-foreground            = ${colors.green}
 
 
 [module/date]
 type                                = internal/date 
 date-alt                            = %%{F#fff}   %%{F#fff}%H:%M%%{F-}
-date                                =  %{F#13E5A8}  %%{F#fff}%A, %d %B %%{F#fff}%H:%M%%{F-}
+date                                =  %{F#00EDFF}  %%{F#fff}%A, %d %B %%{F#fff}%H:%M%%{F-}
 
 
 [module/battery]
@@ -175,11 +175,11 @@ ramp-capacity-0-foreground          = ${colors.red}
 ramp-capacity-1                     = 
 ramp-capacity-1-foreground          = ${colors.orange}
 ramp-capacity-2                     = 
-ramp-capacity-2-foreground          = ${colors.light-green}
+ramp-capacity-2-foreground          = ${colors.teal}
 ramp-capacity-3                     = 
-ramp-capacity-3 -foreground          = ${colors.light-green}
+ramp-capacity-3 -foreground          = ${colors.teal}
 ramp-capacity-4                     = 
-ramp-capacity-4-foreground          = ${colors.light-green}
+ramp-capacity-4-foreground          = ${colors.teal}
 bar-capacity-width                  = 10
 bar-capacity-format                 = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
 bar-capacity-fill                   = █
@@ -211,11 +211,11 @@ ramp-signal-1                       = 
 ramp-signal-2                       = 
 ramp-signal-3                       = 
 ramp-signal-4                       = 
-ramp-signal-foreground              = ${colors.light-green}
+ramp-signal-foreground              = ${colors.teal}
 animation-packetloss-0              = 
-animation-packetloss-0-foreground   = ${colors.light-green}
+animation-packetloss-0-foreground   = ${colors.teal}
 animation-packetloss-1              = 
-animation-packetloss-1-foreground  = ${colors.light-green}
+animation-packetloss-1-foreground  = ${colors.teal}
 animation-packetloss-framerate      = 500
 
 [module/volume]
@@ -224,7 +224,7 @@ format-volume                       = <ramp-volume><label-volume>
 label-volume-foreground             = ${colors.foreground}
 label-muted                         =   muted
 label-muted-foreground              = ${colors.disable}
-ramp-volume-foreground              = ${colors.light-green}
+ramp-volume-foreground              = ${colors.teal}
 ramp-volume-0                       = 
 ramp-volume-1                       = 
 ramp-volume-2                       = 
@@ -237,15 +237,6 @@ format                              = <label>
 label-foreground                    = ${colors.foreground}
 exec                                = ~/.config/polybar/scripts/weather.py
 
-[module/bitcoin]
-type = custom/script
-exec = curl -sSL https://api.coinmarketcap.com/v1/ticker/bitcoin/\?convert\=BRL | jq -r '.[0]|.price_usd' | sed 's/^/ /'   
-interval = 15
-format =  <label>
-format-prefix = " "
-format-prefix-foreground = ${colors.light-green}
-
-
 [module/backlight]
 type                                = internal/xbacklight
 card                                = intel_backlight
@@ -254,18 +245,17 @@ label-foreground                    = ${colors.foreground}
 ramp-0                              = 
 ramp-1                              = 
 ramp-2                              = 
-ramp-foreground                     = ${colors.light-green}
-bar-width                           = 10
+ramp-foreground                     = ${colors.teal}
+bar-width                           = 13
 bar-indicator                       = |
 bar-indicator-font                  = 3
-bar-indicator-foreground            = ${colors.light-green}
+bar-indicator-foreground            = ${colors.teal}
 bar-fill                            = ─
 bar-fill-font                       = 3
-bar-fill-foreground                 = ${colors.light-green}
+bar-fill-foreground                 = ${colors.teal}
 bar-empty                           = ─
 bar-empty-font                      = 3
 bar-empty-foreground                = ${colors.disable}
-
 
 [module/wired-network]
 type                                = internal/network
@@ -298,7 +288,7 @@ ws-icon-default                     = 
 format                              = <label-state> <label-mode>  
 label-dimmed-underline              = tray-transparent
 label-focused                       = %icon%
-label-focused-foreground            = ${colors.light-green}
+label-focused-foreground            = ${colors.teal}
 label-focused-background            = tray-transparent
 label-focused-underline             = tray-transparent
 label-focused-font                  = 3
@@ -339,14 +329,14 @@ label-private-padding               = ${module/bspwm.label-monocle-padding}
 type                                = internal/memory
 interval                            = 3
 format                              = <label> <bar-used>
-label                               = RAM %gb_used%  %{F#13E5A8}%{F#EDEDED}  %gb_free%
+label                               = RAM %gb_used%/%gb_free%
 label-foreground                    = ${colors.foreground}
 bar-used-indicator                  =
 bar-used-width                      = 30
-bar-used-foreground-0               = ${colors.light-green}
-bar-used-foreground-1               = ${colors.light-green}
-bar-used-foreground-2               = ${colors.light-green}
-bar-used-foreground-3               = ${colors.light-green}
+bar-used-foreground-0               = ${colors.teal}
+bar-used-foreground-1               = ${colors.teal}
+bar-used-foreground-2               = ${colors.teal}
+bar-used-foreground-3               = ${colors.teal}
 bar-used-fill                       = 
 bar-used-empty                      = 
 bar-used-empty-foreground           = ${colors.disable}

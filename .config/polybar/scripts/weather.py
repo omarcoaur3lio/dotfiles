@@ -22,9 +22,9 @@ temp = int(float(weather["main"]["temp"]) - 272.15)
 # Yellow Color
 # sun = "%{F#FAED06}%{F-}"
 
-cloud = "%{F#1BC2E4}%{F-}"
-snow = "%{F#1BC2E4}%{F-}"
-sun = "%{F#1BC2E4}%{F-}"
+cloud = "%{F#13E5A8}%{F-}"
+snow = "%{F#13E5A8}%{F-}"
+sun = "%{F#13E5A8}%{F-}"
 
 if (temp < 15):
     print("%s   %i°C" % (snow, temp))

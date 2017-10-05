@@ -31,8 +31,11 @@ $HOME/.config/polybar/launch.sh &
 # Connect secondary monitor and auto adjust your resolution
 xrandr --output HDMI1 --auto --right-of LVDS1 && ~/.fehbg
 
+# Set Random Wallpaper 
+$HOME/scripts/random-wall.sh &
+
 # Set Wallpaper
-feh --bg-fill /home/marco/Imagens/Wallpapers/back15.jpe
+# feh --randomize --bg-fill /home/marco/Imagens/wallpaper\ Arch\ Linux\ 2017/*
 
 # Desktops
 bspc monitor --reset-desktops term www dev play chat git virt 
