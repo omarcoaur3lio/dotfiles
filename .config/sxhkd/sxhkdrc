@@ -1,6 +1,21 @@
-#
-# wm independent hotkeys
-#
+#::::::::::::::::::::::::::::::::::::::::::::::::
+#											   ::
+#	███████╗██╗  ██╗██╗  ██╗██╗  ██╗██████╗    ::
+#	██╔════╝╚██╗██╔╝██║  ██║██║ ██╔╝██╔══██╗   ::
+#	███████╗ ╚███╔╝ ███████║█████╔╝ ██║  ██║   ::
+#	╚════██║ ██╔██╗ ██╔══██║██╔═██╗ ██║  ██║   ::
+#	███████║██╔╝ ██╗██║  ██║██║  ██╗██████╔╝   ::
+#	╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝    ::
+# 	   										   ::
+#	by: asarch								   ::
+#::::::::::::::::::::::::::::::::::::::::::::::::	                                        
+
+
+#####################################
+#									#
+#    	    General hotkeys      	#
+#									#
+#####################################
 
 # terminal emulator
 super + Return
@@ -11,7 +26,6 @@ super + e
 	nautilus	
 
 # program launcher
-#super + @space
 alt + z
 	dmenu_run -i -fn "NotoSans-10" -p  -nb '#111213' -nf '#EDEDED' -sb '#111213' -sf '#13E5A8'
 
@@ -23,9 +37,11 @@ super + Escape
 super + l
 	dm-tool lock	
 
-# 
-# bspwm hotkeys
-#
+#####################################
+#									#
+#    	     BSPWM hotkeys      	#
+#									#
+#####################################
 
 # quit bspwm normally
 super + alt + Escape
@@ -47,9 +63,11 @@ super + y
 super + g
 	bspc node -s biggest
 
-#
-# state/flags
-#
+#####################################
+#									#
+#	   		State -flags			#	
+#									#
+#####################################
 
 # set the window state
 super + {t,shift + t,s,f}
@@ -59,9 +77,11 @@ super + {t,shift + t,s,f}
 super + ctrl + {x,y,z}
 	bspc node -g {locked,sticky,private}
 
-#
-# focus/swap
-#
+#####################################
+#									#
+#	        Focus - Swap       	    #
+#									#
+#####################################
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
@@ -76,12 +96,12 @@ super + {_,shift + }c
 	bspc node -f {next,prev}.local
 
 # focus the next/previous desktop in the current monitor
-super + {left,right}
-	bspc desktop -f {prev,next}.local
+#super + {Left,Right}
+#	bspc desktop -f {prev,next}.local
 
-# focus the last node/desktop
-super + {grave,Tab}
-	bspc {node,desktop} -f last
+# focus the last desktop
+ctrl + alt + {Left,Right}
+	bspc desktop -f {prev,next}
 
 # focus the older or newer node in the focus history
 super + {o,i}
@@ -93,9 +113,14 @@ super + {o,i}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
-#
-# preselect
-#
+super + {grave,Tab}
+    bspc {window,desktop} -f last
+
+#####################################
+#									#
+#	   		  Preselect      	    #
+#									#
+#####################################
 
 # preselect the direction
 super + ctrl + {h,j,k,l}
@@ -113,9 +138,11 @@ super + ctrl + space
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-#
-# move/resize
-#
+#####################################
+#									#
+#	   Move, resize window      	#
+#									#
+#####################################
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
@@ -128,6 +155,22 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Reducing gap on the fly 
+super + {minus,equal}
+    bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
+
+~button1
+	bspc pointer -g focus
+    
+shift + button{1-3}
+	bspc pointer -g {move,resize_side,resize_corner}
+
+shift + !button{1-3}
+	bspc pointer -t %i %i
+
+shift + @button{1-3}
+	bspc pointer -u
 
 #####################################
 #									#
@@ -156,48 +199,10 @@ XF86MonBrightnessDown
 XF86MonBrightnessUp
 	xbacklight -inc 10
 
-#####################################
-#									#
-#             TESTE				    #
-#									#
-#####################################
-
-
-### Suivant
-XF86AudioNext
-	mpc next
-
-### Previous song if song just began, else replay the begining of the song
-XF86AudioPrev
-	mpc prev
-
-
-#####################################
-
 # Print Screen
 Print
     deepin-screenshot
 
 
-ctrl + alt + {Up,Down,Left,Right}
-	mpc {toggle,stop,prev,next}
 
-# Reducing gap on the fly 
-super + {minus,equal}
-    bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
 
-~button1
-	bspc pointer -g focus
-    
-
-shift + button{1-3}
-	bspc pointer -g {move,resize_side,resize_corner}
-
-shift + !button{1-3}
-	bspc pointer -t %i %i
-
-shift + @button{1-3}
-	bspc pointer -u
-
-alt + shift + r
-	$HOME/scripts/dmenu/spotlight
