@@ -29,7 +29,7 @@ $HOME/.config/polybar/launch.sh &
 #tint2 &
 
 # Connect secondary monitor and auto adjust your resolution
-xrandr --output HDMI1 --auto --right-of LVDS1 && ~/.fehbg
+$HOME/scripts/autoHDMI.sh &
 
 # Set Random Wallpaper 
 $HOME/scripts/random-wall.sh &
