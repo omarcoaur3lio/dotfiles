@@ -11,10 +11,10 @@ MONITOR=LVDS1
 # functions to switch from LVDS1 to HDMI and vice versa
 function ActivateHDMI {
     echo "Switching to HDMI1"
-    xrandr --output HDMI1 --auto --right-of LVDS1 &
-    $HOME/scripts/random-wall.sh --reload
-    MONITOR=HDMI1
+    xrandr --output HDMI1 --auto --right-of LVDS1
+    MONITOR=HDMI1      
 }
+
 function DeactivateHDMI {
     echo "Switching to LVDS1"
     xrandr --output HDMI1 --off --output LVDS1 --auto
@@ -25,6 +25,7 @@ function DeactivateHDMI {
 function HDMIActive {
     [ $MONITOR = "HDMI1" ]
 }
+
 function HDMIConnected {
     ! xrandr | grep "^HDMI1" | grep disconnected
 }
@@ -33,13 +34,13 @@ function HDMIConnected {
 while true
 do
     if ! HDMIActive && HDMIConnected
-    then
+    then 
         ActivateHDMI
     fi
 
     if HDMIActive && ! HDMIConnected
     then
-        DeactivateHDMI
+        DeactivateHDMI        
     fi
 
     sleep 1s

@@ -1,0 +1,18 @@
+{
+
+/*******************	Interpretadores Python   *****************/
+	"python_interpreter": "~/anaconda3/bin/python3.6",
+	//"python_interpreter": "~/anaconda3/envs/k35/bin/python3.5",
+	//"python_interpreter": "~/anaconda3/envs/k27/bin/python2.7",
+
+/****************************************************************/
+
+
+
+	"anaconda_gutter_theme": "alpha", //Define icones na marcação de erros no código
+	"anaconda_linter_show_errors_on_save": true, //Mostra os erros na hora de salvar o arquivo
+	//"pep257": true, // Acusa um erro se não for adicionado uma DocString no inicio do código
+	"aggressive": 2, // Aumenta a agressividade na identação automática (ctrl+alt+R = Identa o código)
+	"auto_formatting_timeout": 10, 
+	"display_signatures": false,
+}
