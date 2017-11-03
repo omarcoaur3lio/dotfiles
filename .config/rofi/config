@@ -1,0 +1,12 @@
+!**************************************
+!*	┬─┐┌─┐┌─┐┬  ┌─┐┌─┐┌┐┌┌─┐┬┌─┐      *
+!*	├┬┘│ │├┤ │  │  │ ││││├┤ ││ ┬      *
+!*	┴└─└─┘└  ┴  └─┘└─┘┘└┘└  ┴└─┘      *
+!*               					  *
+!**************************************
+rofi.terminal:      alacritty
+rofi.sidebar-mode:  true
+rofi.theme:         sidestyle.rasi
+rofi.show-icons: 	false
+drun-icon-theme: 	"[archOS]"
+rofi.font: 			Open Sans 9
