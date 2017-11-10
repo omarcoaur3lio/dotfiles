@@ -1,0 +1,31 @@
+2017-09-07 13:09:49	◥	himura (~himura@unaffiliated/himura) juntou-se a #gnome
+2017-09-07 13:09:49	ℹ 	O tópico de #gnome é "Unofficial GNOME support channel - just ask your questions | GNOME 3.24 released - https://help.gnome.org/misc/release-notes/3.24/ | Want to get involved? - https://wiki.gnome.org/Newcomers"
+2017-09-07 13:09:49	ℹ 	Tópico definido por borschty em ter, 02 mai 2017 18:25:23
+2017-09-07 13:09:50	ℹ 	Canal #gnome: 234 apelidos (1 operado, 0 vozes, 233 normais)
+2017-09-07 13:09:51	ℹ 	Canal criado em sex, 15 jan 2010 09:47:10
+2017-09-07 13:10:00	himura	Boa tarde
+2017-09-07 13:10:53	himura	alguém sabe como resetar o nautilus
+2017-09-07 13:11:14	himura	ele está ignorando minha pasta de downloads
+2017-09-07 13:11:45	himura	ela desfixou da barra laterar e não estou conseguindo mandar ela pra lá de volta
+2017-09-07 13:11:53	◣	LioneLL (~Pidgin@men13-2-82-224-174-71.fbx.proxad.net) saiu (Quit: Leaving.)
+2017-09-07 13:11:57	himura	lateral*
+2017-09-07 13:14:13	illkitten	himura, nautilus -q or killall nautilus.
+2017-09-07 13:15:28	himura	?
+2017-09-07 13:16:28	illkitten	ejecutar que en un terminal de ventanas
+2017-09-07 13:16:54	himura	isso mata o processo, mas não resolve o problema
+2017-09-07 13:19:07	◥	elxa (~elxa@2a01:5c0:12:8d71:fd71:db40:896c:2e6) juntou-se a #gnome
+2017-09-07 13:19:19	illkitten	A continuación, abra nautilus a través del menú Unity (pulse la tecla Super) o utilice el comando run
+2017-09-07 13:20:19	himura	ok
+2017-09-07 13:21:15	◣	mr-jules (~mr-jules@189.172.144.186) saiu (Quit: WeeChat 1.9)
+2017-09-07 13:22:16	◥	mr-jules (~mr-jules@2806:101e:1:9476:56a2:604:49c1:8706) juntou-se a #gnome
+2017-09-07 13:24:56	himura	só?
+2017-09-07 13:25:42	◥	dreamon_ (~dreamon@unaffiliated/dreamon) juntou-se a #gnome
+2017-09-07 13:28:38	◣	RonaldsMazitis (~quassel@81.198.150.83) saiu (Remote host closed the connection)
+2017-09-07 13:36:27	◥	HoboWithAShotgun (~HoboWithA@ipservice-092-217-152-239.092.217.pools.vodafone-ip.de) juntou-se a #gnome
+2017-09-07 13:39:19	◣	a3Dman (~3Dman@unaffiliated/a3dman) saiu (Ping timeout: 255 seconds)
+2017-09-07 13:44:12	◣	Mac101 (~Mac@cpc81403-lanc8-2-0-cust242.3-3.cable.virginm.net) saiu (Quit: Leaving)
+2017-09-07 13:44:46	◥	a3Dman (~3Dman@unaffiliated/a3dman) juntou-se a #gnome
+2017-09-07 13:45:22	◣	HoboWithAShotgun (~HoboWithA@ipservice-092-217-152-239.092.217.pools.vodafone-ip.de) saiu (Ping timeout: 248 seconds)
+2017-09-07 13:45:26	himura	consegui, editei o arquivo user-dirs.dirs depois executei xdg-user-dirs-update
+2017-09-07 13:45:44	himura	illkitten: OBRIGADO PELA FORÇA
+2017-09-07 13:51:27	◣	kaipee (~kaipee@78-33-179-134.static.enta.net) saiu (Quit: Leaving)

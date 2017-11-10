@@ -463,3 +463,424 @@
 2017-08-27 10:34:25		script: 349 scripts do WeeChat 1.9
 2017-08-27 10:34:25		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
 2017-08-27 14:41:32		fifo: pipe fechado
+2017-08-28 08:42:13	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-08-28 08:42:13	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-08-28 08:42:13		scripts perl carregados: buffers, iset
+2017-08-28 08:42:13		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-08-28 08:42:13		script: a transferir a lista de scripts...
+2017-08-28 08:42:13		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-08-28 08:42:21		script: 349 scripts do WeeChat 1.9
+2017-08-28 12:39:12		fifo: pipe fechado
+2017-09-02 19:55:38	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-02 19:55:39	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-02 19:55:39		scripts perl carregados: buffers, iset
+2017-09-02 19:55:39		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-02 19:55:39		script: a transferir a lista de scripts...
+2017-09-02 19:55:39		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-02 19:59:53		fifo: pipe fechado
+2017-09-02 20:00:07	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-02 20:00:07	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-02 20:00:07		scripts perl carregados: buffers, iset
+2017-09-02 20:00:07		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-02 20:00:07	⚠ 	script: a lista de scripts está vazia (o ficheiro do repositório está danificado, ou a transferência falhou)
+2017-09-02 20:00:07		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-02 20:00:23		fifo: pipe fechado
+2017-09-02 20:00:37	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-02 20:00:37	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-02 20:00:37		scripts perl carregados: buffers, iset
+2017-09-02 20:00:37		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-02 20:00:37	⚠ 	script: a lista de scripts está vazia (o ficheiro do repositório está danificado, ou a transferência falhou)
+2017-09-02 20:00:37		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-02 20:00:39		fifo: pipe fechado
+2017-09-02 20:00:54	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-02 20:00:54	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-02 20:00:54		scripts perl carregados: buffers, iset
+2017-09-02 20:00:54		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-02 20:00:54	⚠ 	script: a lista de scripts está vazia (o ficheiro do repositório está danificado, ou a transferência falhou)
+2017-09-02 20:00:54		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-02 20:00:56		fifo: pipe fechado
+2017-09-02 20:01:09	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-02 20:01:09	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-02 20:01:09		scripts perl carregados: buffers, iset
+2017-09-02 20:01:09		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-02 20:01:09	⚠ 	script: a lista de scripts está vazia (o ficheiro do repositório está danificado, ou a transferência falhou)
+2017-09-02 20:01:09		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-02 20:01:13		fifo: pipe fechado
+2017-09-02 20:02:05	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-02 20:02:05	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-02 20:02:05		scripts perl carregados: buffers, iset
+2017-09-02 20:02:05		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-02 20:02:05	⚠ 	script: a lista de scripts está vazia (o ficheiro do repositório está danificado, ou a transferência falhou)
+2017-09-02 20:02:05		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-02 20:02:28		fifo: pipe fechado
+2017-09-02 20:03:24	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-02 20:03:24	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-02 20:03:24		scripts perl carregados: buffers, iset
+2017-09-02 20:03:24		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-02 20:03:24	⚠ 	script: a lista de scripts está vazia (o ficheiro do repositório está danificado, ou a transferência falhou)
+2017-09-02 20:03:24		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-02 23:50:43		fifo: pipe fechado
+2017-09-06 00:27:20	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-06 00:27:21	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-06 00:27:21		scripts perl carregados: buffers, iset
+2017-09-06 00:27:21		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-06 00:27:21		script: a transferir a lista de scripts...
+2017-09-06 00:27:21		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-06 00:27:27		script: 349 scripts do WeeChat 1.9
+2017-09-06 10:24:04		fifo: pipe fechado
+2017-09-06 10:30:07	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-06 10:30:07	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-06 10:30:07		scripts perl carregados: buffers, iset
+2017-09-06 10:30:08		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-06 10:30:08		script: 349 scripts do WeeChat 1.9
+2017-09-06 10:30:08		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-06 10:34:17		fifo: pipe fechado
+2017-09-06 10:48:10	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-06 10:48:10	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-06 10:48:10		scripts perl carregados: buffers, iset
+2017-09-06 10:48:10		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-06 10:48:10		script: 349 scripts do WeeChat 1.9
+2017-09-06 10:48:10		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-06 12:16:17		fifo: pipe fechado
+2017-09-06 12:38:45	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-06 12:38:45	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-06 12:38:45		scripts perl carregados: buffers, iset
+2017-09-06 12:38:45		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-06 12:38:46		script: 349 scripts do WeeChat 1.9
+2017-09-06 12:38:46		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-06 12:43:57		fifo: pipe fechado
+2017-09-07 10:02:27	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-07 10:02:27	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-07 10:02:27		scripts perl carregados: buffers, iset
+2017-09-07 10:02:28		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-07 10:02:28		script: a transferir a lista de scripts...
+2017-09-07 10:02:28		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-07 10:02:32		script: 349 scripts do WeeChat 1.9
+2017-09-07 11:04:20		fifo: pipe fechado
+2017-09-07 13:06:27	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-07 13:06:28	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-07 13:06:28		scripts perl carregados: buffers, iset
+2017-09-07 13:06:30		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-07 13:06:31		script: 349 scripts do WeeChat 1.9
+2017-09-07 13:06:31		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-07 13:09:00		fifo: pipe fechado
+2017-09-07 13:09:05	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-07 13:09:05	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-07 13:09:05		scripts perl carregados: buffers, iset
+2017-09-07 13:09:05		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-07 13:09:05		script: 349 scripts do WeeChat 1.9
+2017-09-07 13:09:05		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-07 13:51:43		fifo: pipe fechado
+2017-09-08 10:51:40	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-08 10:51:40	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-08 10:51:40		scripts perl carregados: buffers, iset
+2017-09-08 10:51:40		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-08 10:51:40		script: a transferir a lista de scripts...
+2017-09-08 10:51:40		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-08 10:51:57		fifo: pipe fechado
+2017-09-08 10:52:20	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-08 10:52:21	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-08 10:52:21		scripts perl carregados: buffers, iset
+2017-09-08 10:52:21		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-08 10:52:21		script: 349 scripts do WeeChat 1.9
+2017-09-08 10:52:21		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-08 13:30:12		fifo: pipe fechado
+2017-09-09 13:40:52	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-09 13:40:52	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-09 13:40:52		scripts perl carregados: buffers, iset
+2017-09-09 13:40:52		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-09 13:40:53		script: a transferir a lista de scripts...
+2017-09-09 13:40:53		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-09 13:40:57		script: 349 scripts do WeeChat 1.9
+2017-09-09 13:41:04		fifo: pipe fechado
+2017-09-09 13:41:38	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-09 13:41:38	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-09 13:41:38		scripts perl carregados: buffers, iset
+2017-09-09 13:41:38		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-09 13:41:38		script: 349 scripts do WeeChat 1.9
+2017-09-09 13:41:38		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-09 13:43:51		fifo: pipe fechado
+2017-09-10 21:39:00	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-10 21:39:00	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-10 21:39:00		scripts perl carregados: buffers, iset
+2017-09-10 21:39:00		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-10 21:39:01		script: a transferir a lista de scripts...
+2017-09-10 21:39:01		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-10 21:39:05		script: 349 scripts do WeeChat 1.9
+2017-09-11 12:48:00		fifo: pipe fechado
+2017-09-11 21:52:39	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-11 21:52:39	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-11 21:52:39		scripts perl carregados: buffers, iset
+2017-09-11 21:52:41		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-11 21:52:41		script: a transferir a lista de scripts...
+2017-09-11 21:52:41		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-11 21:52:55		script: 349 scripts do WeeChat 1.9
+2017-09-12 00:50:57		fifo: pipe fechado
+2017-09-15 09:48:02	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-15 09:48:02	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-15 09:48:02		scripts perl carregados: buffers, iset
+2017-09-15 09:48:03		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-15 09:48:04		script: a transferir a lista de scripts...
+2017-09-15 09:48:04		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-15 09:48:07		script: 349 scripts do WeeChat 1.9
+2017-09-15 09:48:22		fifo: pipe fechado
+2017-09-15 10:05:29	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-15 10:05:29	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-15 10:05:29		scripts perl carregados: buffers, iset
+2017-09-15 10:05:29		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-15 10:05:29		script: 349 scripts do WeeChat 1.9
+2017-09-15 10:05:29		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-15 10:33:45		fifo: pipe fechado
+2017-09-15 11:49:55	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-15 11:49:55	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-15 11:49:55		scripts perl carregados: buffers, iset
+2017-09-15 11:49:55		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-15 11:49:55		script: 349 scripts do WeeChat 1.9
+2017-09-15 11:49:55		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-15 11:52:31		fifo: pipe fechado
+2017-09-16 14:02:10		Novo atalho de teclado (contexto "default"): meta-meta-OQ => /bar scroll buflist * e
+2017-09-16 14:02:10		Novo atalho de teclado (contexto "default"): meta-meta-OP => /bar scroll buflist * b
+2017-09-16 14:02:10		Novo atalho de teclado (contexto "default"): meta-OQ => /bar scroll buflist * +100%
+2017-09-16 14:02:10		Novo atalho de teclado (contexto "default"): meta-OP => /bar scroll buflist * -100%
+2017-09-16 14:02:10	 ⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-16 14:02:10		Novo atalho de teclado (contexto "mouse"): @bar(buffers):ctrl-wheeldown => hsignal:buffers_mouse
+2017-09-16 14:02:10		Novo atalho de teclado (contexto "mouse"): @bar(buffers):ctrl-wheelup => hsignal:buffers_mouse
+2017-09-16 14:02:10		Novo atalho de teclado (contexto "mouse"): @item(buffers):button2* => hsignal:buffers_mouse
+2017-09-16 14:02:10		Novo atalho de teclado (contexto "mouse"): @item(buffers):button1* => hsignal:buffers_mouse
+2017-09-16 14:02:10	 ⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-16 14:02:10		Novo atalho de teclado (contexto "mouse"): @chat(perl.iset):button1 => hsignal:iset_mouse
+2017-09-16 14:02:10		Novo atalho de teclado (contexto "mouse"): @chat(perl.iset):button2* => hsignal:iset_mouse
+2017-09-16 14:02:10		Novo atalho de teclado (contexto "mouse"): @chat(perl.iset):wheeldown => /repeat 5 /iset **down
+2017-09-16 14:02:10		Novo atalho de teclado (contexto "mouse"): @chat(perl.iset):wheelup => /repeat 5 /iset **up
+2017-09-16 14:02:10		scripts perl carregados: buffers, iset
+2017-09-16 14:02:10		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-16 14:02:11		script: a transferir a lista de scripts...
+2017-09-16 14:02:11		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-16 14:03:00		fifo: pipe fechado
+2017-09-16 15:41:39	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-16 15:41:39	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-16 15:41:39		scripts perl carregados: buffers, iset
+2017-09-16 15:41:40		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-16 15:41:40		script: a transferir a lista de scripts...
+2017-09-16 15:41:40		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-16 15:41:53		script: 349 scripts do WeeChat 1.9
+2017-09-16 17:35:41		fifo: pipe fechado
+2017-09-17 15:09:13	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-17 15:09:13	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-17 15:09:13		scripts perl carregados: buffers, iset
+2017-09-17 15:09:14		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-17 15:09:14		script: 349 scripts do WeeChat 1.9
+2017-09-17 15:09:14		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-17 15:14:11		fifo: pipe fechado
+2017-09-17 18:24:58	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-17 18:24:58	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-17 18:24:58		scripts perl carregados: buffers, iset
+2017-09-17 18:24:59		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-17 18:24:59		script: a transferir a lista de scripts...
+2017-09-17 18:24:59		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-17 18:25:04		script: 349 scripts do WeeChat 1.9
+2017-09-17 19:28:01		fifo: pipe fechado
+2017-09-20 07:14:45	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-20 07:14:45	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-20 07:14:45		scripts perl carregados: buffers, iset
+2017-09-20 07:14:45		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-20 07:14:46		script: a transferir a lista de scripts...
+2017-09-20 07:14:46		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-20 07:14:49		script: 349 scripts do WeeChat 1.9
+2017-09-20 07:52:18		fifo: pipe fechado
+2017-09-20 07:55:57	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-20 07:55:57	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-20 07:55:57		scripts perl carregados: buffers, iset
+2017-09-20 07:55:58		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-20 07:55:58		script: 349 scripts do WeeChat 1.9
+2017-09-20 07:55:58		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-20 12:45:16		fifo: pipe fechado
+2017-09-21 00:58:51	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-21 00:58:51	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-21 00:58:51		scripts perl carregados: buffers, iset
+2017-09-21 00:58:51		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-21 00:58:51		script: 349 scripts do WeeChat 1.9
+2017-09-21 00:58:51		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-21 02:05:43		fifo: pipe fechado
+2017-09-24 11:05:47	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-24 11:05:47	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-24 11:05:47		scripts perl carregados: buffers, iset
+2017-09-24 11:05:48		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-24 11:05:48		script: a transferir a lista de scripts...
+2017-09-24 11:05:48		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-24 11:05:57		script: 349 scripts do WeeChat 1.9
+2017-09-25 12:59:37		fifo: pipe fechado
+2017-09-29 10:47:24	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-29 10:47:24	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-29 10:47:24		scripts perl carregados: buffers, iset
+2017-09-29 10:47:27		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-29 10:47:27		script: a transferir a lista de scripts...
+2017-09-29 10:47:27		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-29 10:47:57		script: 349 scripts do WeeChat 1.9.1
+2017-09-29 12:41:28		fifo: pipe fechado
+2017-09-30 09:50:53	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-30 09:50:53	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-30 09:50:53		scripts perl carregados: buffers, iset
+2017-09-30 09:50:54		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-30 09:50:54		script: 349 scripts do WeeChat 1.9.1
+2017-09-30 09:50:54		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-30 10:20:11		fifo: pipe fechado
+2017-09-30 16:09:29	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-09-30 16:09:29	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-09-30 16:09:29		scripts perl carregados: buffers, iset
+2017-09-30 16:09:29		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-09-30 16:09:29		script: a transferir a lista de scripts...
+2017-09-30 16:09:29		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-09-30 16:09:35		script: 349 scripts do WeeChat 1.9.1
+2017-09-30 21:57:18		fifo: pipe fechado
+2017-10-03 09:45:50	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-10-03 09:45:50	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-10-03 09:45:50		scripts perl carregados: buffers, iset
+2017-10-03 09:45:51		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-10-03 09:45:51		script: a transferir a lista de scripts...
+2017-10-03 09:45:51		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-10-03 10:19:05		fifo: pipe fechado
+2017-10-06 00:45:21	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-10-06 00:45:22	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-10-06 00:45:22		scripts perl carregados: buffers, iset
+2017-10-06 00:45:27		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-10-06 00:45:28		script: a transferir a lista de scripts...
+2017-10-06 00:45:28		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-10-06 00:45:31		script: 349 scripts do WeeChat 1.9.1
+2017-10-06 12:57:19		fifo: pipe fechado
+2017-10-07 18:50:23	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-10-07 18:50:23	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-10-07 18:50:23		scripts perl carregados: buffers, iset
+2017-10-07 18:50:24		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-10-07 18:50:24		script: a transferir a lista de scripts...
+2017-10-07 18:50:24		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-10-07 18:50:45		fifo: pipe fechado
+2017-10-07 18:52:48	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-10-07 18:52:48	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-10-07 18:52:49		scripts perl carregados: buffers, iset
+2017-10-07 18:52:49		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-10-07 18:52:49		script: 349 scripts do WeeChat 1.9.1
+2017-10-07 18:52:49		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-10-08 14:22:57		fifo: pipe fechado
+2017-10-08 14:27:56	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-10-08 14:27:56	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-10-08 14:27:56		scripts perl carregados: buffers, iset
+2017-10-08 14:27:59		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-10-08 14:27:59		script: 349 scripts do WeeChat 1.9.1
+2017-10-08 14:27:59		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-10-09 08:34:48		fifo: pipe fechado
+2017-10-09 09:02:06	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-10-09 09:02:06	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-10-09 09:02:06		scripts perl carregados: buffers, iset
+2017-10-09 09:02:06		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-10-09 09:02:06		script: a transferir a lista de scripts...
+2017-10-09 09:02:06		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-10-09 09:02:11		script: 349 scripts do WeeChat 1.9.1
+2017-10-09 12:52:57		fifo: pipe fechado
+2017-10-10 10:00:15	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-10-10 10:00:15	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-10-10 10:00:15		scripts perl carregados: buffers, iset
+2017-10-10 10:00:15		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-10-10 10:00:16		script: a transferir a lista de scripts...
+2017-10-10 10:00:16		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-10-10 12:44:01		fifo: pipe fechado
+2017-10-11 09:27:03	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-10-11 09:27:03	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-10-11 09:27:03		scripts perl carregados: buffers, iset
+2017-10-11 09:27:04		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-10-11 09:27:04		script: 44 scripts do WeeChat 1.9.1
+2017-10-11 09:27:04		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-10-11 12:49:10		fifo: pipe fechado
+2017-10-12 12:30:15	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-10-12 12:30:15	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-10-12 12:30:15		scripts perl carregados: buffers, iset
+2017-10-12 12:30:15		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-10-12 12:30:16		script: a transferir a lista de scripts...
+2017-10-12 12:30:16		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-10-12 12:30:32		script: 349 scripts do WeeChat 1.9.1
+2017-10-12 16:53:52		fifo: pipe fechado
+2017-10-13 13:21:28	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-10-13 13:21:28	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-10-13 13:21:28		scripts perl carregados: buffers, iset
+2017-10-13 13:21:28		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-10-13 13:21:29		script: a transferir a lista de scripts...
+2017-10-13 13:21:29		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-10-13 13:21:32		script: 349 scripts do WeeChat 1.9.1
+2017-10-13 15:14:52		fifo: pipe fechado
+2017-10-14 19:05:59	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-10-14 19:05:59	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-10-14 19:06:00		scripts perl carregados: buffers, iset
+2017-10-14 19:06:00		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-10-14 19:06:00		script: a transferir a lista de scripts...
+2017-10-14 19:06:00		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-10-14 19:06:05		script: 350 scripts do WeeChat 1.9.1
+2017-10-17 08:27:02	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-10-17 08:27:02	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-10-17 08:27:02		scripts perl carregados: buffers, iset
+2017-10-17 08:27:03		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-10-17 08:27:03		script: a transferir a lista de scripts...
+2017-10-17 08:27:03		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-10-17 08:27:08		script: 350 scripts do WeeChat 1.9.1
+2017-10-17 10:17:27		fifo: pipe fechado
+2017-10-17 10:27:52	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-10-17 10:27:52	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-10-17 10:27:52		scripts perl carregados: buffers, iset
+2017-10-17 10:27:53		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-10-17 10:27:54		script: 350 scripts do WeeChat 1.9.1
+2017-10-17 10:27:54		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-10-17 11:01:18		fifo: pipe fechado
+2017-10-17 22:28:39	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-10-17 22:28:40	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-10-17 22:28:40		scripts perl carregados: buffers, iset
+2017-10-17 22:28:40		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-10-17 22:28:41		script: 350 scripts do WeeChat 1.9.1
+2017-10-17 22:28:41		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-10-17 23:03:01		fifo: pipe fechado
+2017-10-17 23:47:12	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-10-17 23:47:12	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-10-17 23:47:12		scripts perl carregados: buffers, iset
+2017-10-17 23:47:12		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-10-17 23:47:13		script: 350 scripts do WeeChat 1.9.1
+2017-10-17 23:47:13		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-10-18 13:04:45		fifo: pipe fechado
+2017-10-24 10:04:16	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-10-24 10:04:16	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-10-24 10:04:16		scripts perl carregados: buffers, iset
+2017-10-24 10:04:17		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-10-24 10:04:17		script: a transferir a lista de scripts...
+2017-10-24 10:04:17		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-10-24 10:04:22		script: 350 scripts do WeeChat 1.9.1
+2017-10-24 10:20:12		fifo: pipe fechado
+2017-11-02 18:28:48	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-11-02 18:28:48	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-11-02 18:28:48		scripts perl carregados: buffers, iset
+2017-11-02 18:28:49		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-11-02 18:28:49		script: a transferir a lista de scripts...
+2017-11-02 18:28:49		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-11-02 18:28:52		script: 351 scripts do WeeChat 1.9.1
+2017-11-02 18:59:40		fifo: pipe fechado
+2017-11-04 18:46:02	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-11-04 18:46:03	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-11-04 18:46:03		scripts perl carregados: buffers, iset
+2017-11-04 18:46:03		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-11-04 18:46:03		script: a transferir a lista de scripts...
+2017-11-04 18:46:03		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-11-04 18:46:06		script: 351 scripts do WeeChat 1.9.1
+2017-11-04 21:13:21		fifo: pipe fechado
+2017-11-04 21:14:08	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-11-04 21:14:08	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-11-04 21:14:08	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-11-04 21:14:08		scripts perl carregados: buffers, iset
+2017-11-04 21:14:09		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-11-04 21:14:09		script: 351 scripts do WeeChat 1.9.1
+2017-11-04 21:14:09		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-11-04 21:53:22		fifo: pipe fechado
+2017-11-08 09:40:48	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-11-08 09:40:48	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
+2017-11-08 09:40:48	⚠ 	buflist: warning: the script buffers.pl is loaded and provides a bar with list of buffers similar to the buflist plugin; you may want to uninstall the script buffers.pl (/script remove buffers.pl) or disable/unload the buflist plugin; see WeeChat release notes for more information
+2017-11-08 09:40:48		scripts perl carregados: buffers, iset
+2017-11-08 09:40:49		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
+2017-11-08 09:40:50		script: a transferir a lista de scripts...
+2017-11-08 09:40:50		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2017-11-08 09:40:53		script: 351 scripts do WeeChat 1.9.1
+2017-11-08 10:30:48		fifo: pipe fechado

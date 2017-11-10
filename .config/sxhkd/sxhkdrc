@@ -26,8 +26,12 @@ super + e
 	nautilus	
 
 # program launcher
-alt + z
+alt + w
 	dmenu_run -i -fn "NotoSans-10" -p  -nb '#111213' -nf '#EDEDED' -sb '#111213' -sf '#13E5A8'
+
+alt + z
+	rofi -show drun
+	#rofi -show drun -show-icons 'true'
 
 # make sxhkd reload its configuration files:
 super + Escape
