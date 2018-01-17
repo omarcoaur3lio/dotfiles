@@ -2039,6 +2039,7 @@
 2017-11-08 10:23:10	◥	knoxy (~knoxy@unaffiliated/knoxy) juntou-se a #python-br
 2017-11-08 10:26:34	◣	o_lalertom (~Nycholas@moonstonemedical/developer/o-lalertom) saiu (Remote host closed the connection)
 2017-11-08 10:26:58	◥	o_lalertom (~Nycholas@moonstonemedical/developer/o-lalertom) juntou-se a #python-br
+<<<<<<< HEAD
 2018-01-02 14:01:40	◥	himura (~himura@unaffiliated/himura) juntou-se a #python-br
 2018-01-02 14:01:40	ℹ 	O tópico de #python-br é "Bem vindo ao #python-br - http://www.python.org.br | Para colar código use http://bpaste.net | Versões atuais: Python 2.7.13 e Python 3.6.2 | Download: https://www.python.org/downloads/ | Para tirar dúvidas, diga qual é sua dúvida e seja paciente pela resposta"
 2018-01-02 14:01:40	ℹ 	Tópico definido por danilo em ter, 01 ago 2017 11:22:03
@@ -2602,3 +2603,5 @@
 2018-01-16 20:14:14	◣	lborda (~lborda@23.91.252.210) saiu (Quit: Ex-Chat)
 2018-01-16 20:14:35	◥	lborda (~lborda@23-91-252-210.cpe.distributel.net) juntou-se a #python-br
 2018-01-16 20:20:32	◥	Pupilo (~Pupilo@unaffiliated/pupilo) juntou-se a #python-br
+=======
+>>>>>>> master

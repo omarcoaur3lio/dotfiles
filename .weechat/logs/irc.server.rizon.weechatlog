@@ -7847,6 +7847,7 @@
 2017-11-08 09:40:52	ℹ 	Global (service@rizon.net): [Logon News - May 21 2011] First time on Rizon? Be sure to read the FAQ! http://s.rizon.net/FAQ
 2017-11-08 09:40:52	ℹ 	Global (service@rizon.net): [Logon News - Dec 16 2013] Own a large/active channel or plan to get one going? Please read http://s.rizon.net/authline
 2017-11-08 09:40:52	ℹ 	Global (service@rizon.net): [Random News - May 07 2013] Looking for a quotes, trivia, or other extra bots? /msg funserv help
+<<<<<<< HEAD
 2018-01-02 14:01:25	ℹ 	irc: a conectar ao servidor irc.rizon.net/6697 (SSL)...
 2018-01-02 14:01:25	ℹ 	gnutls: conectado usando troca de segredos partilhados de Diffie-Hellman de 2048 bits
 2018-01-02 14:01:25	ℹ 	gnutls: a receber 2 certificados
@@ -9382,3 +9383,5 @@
 2018-01-16 20:02:23	ℹ 	Global (service@rizon.net): [Logon News - May 21 2011] First time on Rizon? Be sure to read the FAQ! http://s.rizon.net/FAQ
 2018-01-16 20:02:23	ℹ 	Global (service@rizon.net): [Logon News - Dec 16 2013] Own a large/active channel or plan to get one going? Please read http://s.rizon.net/authline
 2018-01-16 20:02:23	ℹ 	Global (service@rizon.net): [Random News - May 07 2013] Looking for a quotes, trivia, or other extra bots? /msg funserv help
+=======
+>>>>>>> master

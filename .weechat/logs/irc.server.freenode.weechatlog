@@ -8540,6 +8540,7 @@
 2017-11-08 09:41:03	ℹ 	Modo de utilizador [+Zi] por himura
 2017-11-08 09:41:03	ℹ 	MemoServ (MemoServ@services.): You have 1 new memo.
 2017-11-08 09:41:03	ℹ 	MemoServ (MemoServ@services.): To read them, type /msg MemoServ READ NEW
+<<<<<<< HEAD
 2018-01-02 14:01:25	ℹ 	irc: a conectar ao servidor leguin.freenode.net/6697 (SSL)...
 2018-01-02 14:01:26	ℹ 	gnutls: conectado usando troca de segredos partilhados de Diffie-Hellman de 2048 bits
 2018-01-02 14:01:26	ℹ 	gnutls: a receber 2 certificados
@@ -10676,3 +10677,5 @@
 2018-01-16 20:02:34	ℹ 	Modo de utilizador [+Zi] por himura
 2018-01-16 20:02:34	ℹ 	MemoServ (MemoServ@services.): You have 4 new memos.
 2018-01-16 20:02:34	ℹ 	MemoServ (MemoServ@services.): To read them, type /msg MemoServ READ NEW
+=======
+>>>>>>> master

@@ -257,6 +257,7 @@
 2017-11-08 09:41:08	ℹ 	Canal ##Unix-BR: 3 apelidos (1 operado, 0 vozes, 2 normais)
 2017-11-08 09:41:08	ℹ 	PvNotice(ChanServ): [Parceria] #c4ll #openhardware_br ##eletronica
 2017-11-08 09:41:16	ℹ 	Canal criado em sáb, 23 fev 2008 16:18:34
+<<<<<<< HEAD
 2018-01-02 14:01:40	◥	himura (~himura@unaffiliated/himura) juntou-se a ##Unix-BR
 2018-01-02 14:01:40	ℹ 	O tópico de ##Unix-BR é "The world of Unix(tm) and programming - Unix(tm),unix like and psychedelic O.S.s (like plan9) && Unix Tree minnie.tuhs.org/UnixTree/"
 2018-01-02 14:01:40	ℹ 	Tópico definido por unkzo em qua, 06 abr 2011 15:01:41
@@ -386,3 +387,5 @@
 2018-01-16 20:02:41	ℹ 	Canal ##Unix-BR: 3 apelidos (1 operado, 0 vozes, 2 normais)
 2018-01-16 20:02:41	ℹ 	PvNotice(ChanServ): [Parceria] #c4ll #openhardware_br ##eletronica
 2018-01-16 20:02:49	ℹ 	Canal criado em sáb, 23 fev 2008 16:18:34
+=======
+>>>>>>> master

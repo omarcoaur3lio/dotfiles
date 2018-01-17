@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [2018-01-16 20:02:20] WeeChat 2.0.1 (compilado em Jan  3 2018 08:05:45)
 [2018-01-16 20:02:20] Lendo arquivo de configuração sec.conf
 [2018-01-16 20:02:20] Lendo arquivo de configuração weechat.conf
@@ -40,3 +41,45 @@
 [2018-01-16 20:22:18] Escrevendo arquivo de configurações buflist.conf
 [2018-01-16 20:22:18] Escrevendo arquivo de configurações weechat.conf
 [2018-01-16 20:22:18] Escrevendo arquivo de configurações sec.conf
+=======
+[2017-11-08 09:40:47] WeeChat 1.9.1 (compilado em Sep 23 2017 19:44:10)
+[2017-11-08 09:40:47] Lendo arquivo de configuração sec.conf
+[2017-11-08 09:40:47] Lendo arquivo de configuração weechat.conf
+[2017-11-08 09:40:47] Lendo arquivo de configuração plugins.conf
+[2017-11-08 09:40:48] Lendo arquivo de configuração charset.conf
+[2017-11-08 09:40:48] Lendo arquivo de configuração logger.conf
+[2017-11-08 09:40:48] Lendo arquivo de configuração exec.conf
+[2017-11-08 09:40:48] Lendo arquivo de configuração trigger.conf
+[2017-11-08 09:40:48] Lendo arquivo de configuração aspell.conf
+[2017-11-08 09:40:48] Lendo arquivo de configuração alias.conf
+[2017-11-08 09:40:48] Lendo arquivo de configuração buflist.conf
+[2017-11-08 09:40:48] Lendo arquivo de configuração fifo.conf
+[2017-11-08 09:40:48] Lendo arquivo de configuração xfer.conf
+[2017-11-08 09:40:48] Lendo arquivo de configuração irc.conf
+[2017-11-08 09:40:48] Lendo arquivo de configuração relay.conf
+[2017-11-08 09:40:48] Lendo arquivo de configuração buffers.conf
+[2017-11-08 09:40:48] Lendo arquivo de configuração iset.conf
+[2017-11-08 09:40:49] Lendo arquivo de configuração colorize_nicks.conf
+[2017-11-08 09:40:50] Lendo arquivo de configuração script.conf
+[2017-11-08 09:40:50] irc: a conectar ao servidor leguin.freenode.net/6697 (SSL)...
+[2017-11-08 09:40:50] irc: a conectar ao servidor irc.rizon.net/6697 (SSL)...
+[2017-11-08 10:30:35] Sinal SIGTERM recebido, saindo do WeeChat...
+[2017-11-08 10:30:37] Escrevendo arquivo de configurações plugins.conf
+[2017-11-08 10:30:47] Escrevendo arquivo de configurações exec.conf
+[2017-11-08 10:30:47] Escrevendo arquivo de configurações alias.conf
+[2017-11-08 10:30:47] Escrevendo arquivo de configurações charset.conf
+[2017-11-08 10:30:47] Escrevendo arquivo de configurações trigger.conf
+[2017-11-08 10:30:48] Escrevendo arquivo de configurações fifo.conf
+[2017-11-08 10:30:48] Escrevendo arquivo de configurações logger.conf
+[2017-11-08 10:30:48] Escrevendo arquivo de configurações buflist.conf
+[2017-11-08 10:30:48] Escrevendo arquivo de configurações colorize_nicks.conf
+[2017-11-08 10:30:48] Escrevendo arquivo de configurações relay.conf
+[2017-11-08 10:30:48] Escrevendo arquivo de configurações aspell.conf
+[2017-11-08 10:30:48] Escrevendo arquivo de configurações script.conf
+[2017-11-08 10:30:48] Escrevendo arquivo de configurações xfer.conf
+[2017-11-08 10:30:48] Escrevendo arquivo de configurações buffers.conf
+[2017-11-08 10:30:49] Escrevendo arquivo de configurações iset.conf
+[2017-11-08 10:30:49] Escrevendo arquivo de configurações irc.conf
+[2017-11-08 10:30:49] Escrevendo arquivo de configurações weechat.conf
+[2017-11-08 10:30:49] Escrevendo arquivo de configurações sec.conf
+>>>>>>> master

@@ -4,7 +4,11 @@
 include "/home/marco/.gtkrc-2.0.mine"
 gtk-theme-name="Ant-Nebula"
 gtk-icon-theme-name="archOS"
+<<<<<<< HEAD
 gtk-font-name="Cantarell 11"
+=======
+gtk-font-name="Roboto 11"
+>>>>>>> master
 gtk-cursor-theme-name="capitaine-cursors"
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_BOTH

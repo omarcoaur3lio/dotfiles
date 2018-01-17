@@ -1097,6 +1097,7 @@
 2017-11-08 09:53:34	◥	xlx (~xlx@unaffiliated/xlx) juntou-se a #archlinux-br
 2017-11-08 09:55:17	◣	xlx (~xlx@unaffiliated/xlx) saiu (Remote host closed the connection)
 2017-11-08 09:56:52	◥	xlx (~xlx@unaffiliated/xlx) juntou-se a #archlinux-br
+<<<<<<< HEAD
 2018-01-02 14:01:40	◥	himura (~himura@unaffiliated/himura) juntou-se a #archlinux-br
 2018-01-02 14:01:40	ℹ 	O tópico de #archlinux-br é "Leia as regras do canal - http://www.archlinux-br.org/irc | Dúvidas: antes de perguntar procure no Wiki, fórum, lista de discussão e Google. | http://wiki.archlinux.org | http://forum.archlinux-br.org | http://groups.google.com/group/archlinux-br | http://lmgtfy.com/ | Download do Arch Linux - http://www.archlinux-br.org/download | Bem vindo ao Arch Linux Brasil! |"
 2018-01-02 14:01:40	ℹ 	Tópico definido por corvolino (~wxz@unaffiliated/corvolino) em qua, 02 jan 2013 04:13:11
@@ -1324,3 +1325,5 @@
 2018-01-16 20:02:41	ℹ 	PvNotice(ChanServ): Seja muito bem-vindo(a) ao canal dos usuários brasileiros do Arch Linux. Aqui você poderá tirar dúvidas, fazer sugestões, críticas e, claro, bater aquele papo nerd. ;) Se você ainda não conhece o Arch visite nossa página para maiores informações sobre a distro: http://www.archlinux-br.org
 2018-01-16 20:02:41	ℹ 	URL para #archlinux-br: http://www.archlinux-br.org
 2018-01-16 20:02:55	ℹ 	Canal criado em seg, 21 jul 2008 20:41:06
+=======
+>>>>>>> master

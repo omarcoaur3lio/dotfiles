@@ -5937,6 +5937,7 @@
 2017-11-08 10:21:20	ℹ 	irc: a reconectar ao servidor...
 2017-11-08 10:21:20	⚠ 	irc: proxy "tor" não encontrado para servidor "OFTC", não foi possível conectar
 2017-11-08 10:21:20	ℹ 	irc: a reconectar ao servidor dentro de 10 minutos
+<<<<<<< HEAD
 2018-01-02 14:01:25	⚠ 	irc: proxy "tor" não encontrado para servidor "OFTC", não foi possível conectar
 2018-01-02 14:01:25	ℹ 	irc: a reconectar ao servidor dentro de 10 segundos
 2018-01-02 14:01:35	ℹ 	irc: a reconectar ao servidor...
@@ -8047,3 +8048,5 @@
 2018-01-16 20:12:52	ℹ 	irc: a reconectar ao servidor...
 2018-01-16 20:12:52	⚠ 	irc: proxy "tor" não encontrado para servidor "OFTC", não foi possível conectar
 2018-01-16 20:12:52	ℹ 	irc: a reconectar ao servidor dentro de 10 minutos
+=======
+>>>>>>> master

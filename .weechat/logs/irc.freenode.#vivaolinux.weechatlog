@@ -1129,6 +1129,7 @@
 2017-11-08 09:41:08	ℹ 	PvNotice(ChanServ): ""
 2017-11-08 09:41:08	ℹ 	URL para #vivaolinux: http://www.vivaolinux.com.br
 2017-11-08 09:41:20	ℹ 	Canal criado em sáb, 28 jun 2008 21:27:00
+<<<<<<< HEAD
 2018-01-02 14:01:40	◥	himura (~himura@unaffiliated/himura) juntou-se a #vivaolinux
 2018-01-02 14:01:40	ℹ 	O tópico de #vivaolinux é "Seja bem-vindo! - Sinta-se livre para pedir ajuda e bater papo sobre Linux. Se precisa colar mais de 3 linhas, use http://pastebin.com/ | Junte-se a nós, não faça parte apenas do problema, mas também da solução."
 2018-01-02 14:01:40	ℹ 	Tópico definido por juliohm em sex, 07 fev 2014 21:13:04
@@ -3760,3 +3761,5 @@
 2018-01-16 20:02:41	ℹ 	PvNotice(ChanServ): ""
 2018-01-16 20:02:41	ℹ 	URL para #vivaolinux: http://www.vivaolinux.com.br
 2018-01-16 20:02:53	ℹ 	Canal criado em sáb, 28 jun 2008 21:27:00
+=======
+>>>>>>> master

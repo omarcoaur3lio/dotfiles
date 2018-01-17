@@ -884,6 +884,7 @@
 2017-11-08 09:40:50		Plugins carregados: alias, aspell, buflist, charset, exec, fifo, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
 2017-11-08 09:40:53		script: 351 scripts do WeeChat 1.9.1
 2017-11-08 10:30:48		fifo: pipe fechado
+<<<<<<< HEAD
 2018-01-02 14:01:25	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
 2018-01-02 14:01:25	⚠ 	irc: aviso: o proxy "tor" não existe (pode adicioná-lo pelo comando /proxy)
 2018-01-02 14:01:25		scripts python carregados: buffer_dmenu, colorize_nicks, xfer_run_command
@@ -1226,3 +1227,5 @@
 2018-01-16 20:22:18		perl: scripts descarregados
 2018-01-16 20:22:18		fifo: pipe fechado
 2018-01-16 20:22:18		python: scripts descarregados
+=======
+>>>>>>> master
