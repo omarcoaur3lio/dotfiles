@@ -19,13 +19,13 @@ try:
     # Lime Color
     # cloud = "%{F#ADFE04}%{F-}"
     # Teal Color
-    # snow = "%{F#1DDAC8}%{F-}"
+    # snow = "%{F#00EDFF}%{F-}"
     # Yellow Color
     # sun = "%{F#FAED06}%{F-}"
 
-    cloud = "%{F#13E5A8}%{F-}"
-    snow = "%{F#13E5A8}%{F-}"
-    sun = "%{F#13E5A8}%{F-}"
+    cloud = "%{F#00EDFF}%{F-}"
+    snow = "%{F#00EDFF}%{F-}"
+    sun = "%{F#00EDFF}%{F-}"
 
     if (temp < 15):
         print("%s   %i°C" % (snow, temp))

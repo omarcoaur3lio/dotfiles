@@ -1,8 +1,9 @@
 #!/bin/bash
 
 shopt -s nullglob
-cd /home/marco/Imagens/wallpaper\ Arch\ Linux\ 2017/
+# cd /home/marco/Imagens/wallpaper\ Arch\ Linux\ 2017/
 # cd /home/marco/Imagens/wallpaper-mountains
+cd /home/marco/Imagens/Arch-FS-Wall/
 
 while true; do
 	files=()

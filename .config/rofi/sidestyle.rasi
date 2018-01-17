@@ -50,7 +50,7 @@
 
 
     // Bold, Italic, Underline
-        highlight:     bold #01DE95;
+        highlight:     bold #00FFF5;
 
 
 }
@@ -59,7 +59,7 @@
     fullscreen: true;
     location:  3;
     anchor:   3;
-    border:  0px 0px 0px 0px;
+    border:  19px 0px 26px 0px;
     orientation: horizontal;
     transparency:  "real";    
     children: [mainbox, dummy]; 
@@ -72,13 +72,13 @@
 
 #sidebar {
     border: 0px 0px 0px 0px;
-    background-color: #111213F0;
+    background-color: #090B0C;
     padding: 10px;
 }
 
 #button selected {
-    border-color: @green;
-    text-color: @green;
+    border-color: @lightblue;
+    text-color: @lightblue;
 }
 
 #entry {
@@ -86,15 +86,15 @@
 }
 
 #inputbar {
-    background-color: #111213F0;
-    text-color: @green;
+    background-color: #090B0C;
+    text-color: @lightblue;
     padding: 4px;
     border: 0px 0px 2px 7px;
 }
 
 #mainbox {
     expand: false;
-    background-color: #111213;
+    background-color: #090B0C;
     spacing: 1em;
 }
 
@@ -102,39 +102,45 @@
     padding: 0em 0.4em 0em 1em;
     dynamic: false;
     lines: 0;
-    background-color: #111213F0;
+    background-color: #090B0C;
     spacing: 15px;
 }
 
 #element selected  normal {
-    text-color: @green;
+    text-color: @lightblue;
+    background-color: #090B0C;
 }
 
 #element normal active {
-    text-color: @green;
+    text-color: @lightblue;
+    background-color: #090B0C;
 }
 
 #element normal urgent {
     text-color: @lime;
+    background-color: #090B0C;
 }
 
 #element alternate normal {
+    background-color: #090B0C;
 }
 
 #element alternate active {
-    text-color: @green;
+    text-color: @lightblue;
+    background-color: #090B0C;
 }
 
 #element alternate urgent {
     text-color: @lime;
+    background-color: #090B0C;
 }
 
 #element selected active {
-    background-color: #111213F0;
-    text-color: @green;
+    background-color: #090B0C;
+    text-color: @lightblue;
 }
 
 #element selected urgent {
-    background-color: #111213F0;
+    background-color: #090B0C;
     text-color: @lime;
 }

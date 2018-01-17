@@ -1,0 +1,42 @@
+[2018-01-16 20:02:20] WeeChat 2.0.1 (compilado em Jan  3 2018 08:05:45)
+[2018-01-16 20:02:20] Lendo arquivo de configuração sec.conf
+[2018-01-16 20:02:20] Lendo arquivo de configuração weechat.conf
+[2018-01-16 20:02:20] Lendo arquivo de configuração plugins.conf
+[2018-01-16 20:02:20] Lendo arquivo de configuração charset.conf
+[2018-01-16 20:02:20] Lendo arquivo de configuração logger.conf
+[2018-01-16 20:02:20] Lendo arquivo de configuração exec.conf
+[2018-01-16 20:02:20] Lendo arquivo de configuração trigger.conf
+[2018-01-16 20:02:20] Lendo arquivo de configuração aspell.conf
+[2018-01-16 20:02:20] Lendo arquivo de configuração alias.conf
+[2018-01-16 20:02:20] Lendo arquivo de configuração buflist.conf
+[2018-01-16 20:02:20] Lendo arquivo de configuração fifo.conf
+[2018-01-16 20:02:20] Lendo arquivo de configuração xfer.conf
+[2018-01-16 20:02:21] Lendo arquivo de configuração irc.conf
+[2018-01-16 20:02:21] Lendo arquivo de configuração relay.conf
+[2018-01-16 20:02:21] Lendo arquivo de configuração colorize_nicks.conf
+[2018-01-16 20:02:21] Lendo arquivo de configuração iset.conf
+[2018-01-16 20:02:21] Lendo arquivo de configuração buffers.conf
+[2018-01-16 20:02:21] Lendo arquivo de configuração script.conf
+[2018-01-16 20:02:21] Lendo arquivo de configuração fset.conf
+[2018-01-16 20:02:21] irc: a conectar ao servidor leguin.freenode.net/6697 (SSL)...
+[2018-01-16 20:02:22] irc: a conectar ao servidor irc.rizon.net/6697 (SSL)...
+[2018-01-16 20:22:17] Terminal perdido, saindo do WeeChat...
+[2018-01-16 20:22:17] Escrevendo arquivo de configurações plugins.conf
+[2018-01-16 20:22:18] Escrevendo arquivo de configurações buffers.conf
+[2018-01-16 20:22:18] Escrevendo arquivo de configurações iset.conf
+[2018-01-16 20:22:18] Escrevendo arquivo de configurações trigger.conf
+[2018-01-16 20:22:18] Escrevendo arquivo de configurações script.conf
+[2018-01-16 20:22:18] Escrevendo arquivo de configurações aspell.conf
+[2018-01-16 20:22:18] Escrevendo arquivo de configurações relay.conf
+[2018-01-16 20:22:18] Escrevendo arquivo de configurações alias.conf
+[2018-01-16 20:22:18] Escrevendo arquivo de configurações fifo.conf
+[2018-01-16 20:22:18] Escrevendo arquivo de configurações colorize_nicks.conf
+[2018-01-16 20:22:18] Escrevendo arquivo de configurações charset.conf
+[2018-01-16 20:22:18] Escrevendo arquivo de configurações exec.conf
+[2018-01-16 20:22:18] Escrevendo arquivo de configurações logger.conf
+[2018-01-16 20:22:18] Escrevendo arquivo de configurações fset.conf
+[2018-01-16 20:22:18] Escrevendo arquivo de configurações xfer.conf
+[2018-01-16 20:22:18] Escrevendo arquivo de configurações irc.conf
+[2018-01-16 20:22:18] Escrevendo arquivo de configurações buflist.conf
+[2018-01-16 20:22:18] Escrevendo arquivo de configurações weechat.conf
+[2018-01-16 20:22:18] Escrevendo arquivo de configurações sec.conf

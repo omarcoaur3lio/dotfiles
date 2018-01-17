@@ -1,0 +1,170 @@
+2017-10-11 10:16:08	himura	teu IP ta visivel
+2017-10-11 10:16:20	basker	opa
+2017-10-11 10:16:24	basker	tranquilo
+2017-10-11 10:16:29	basker	acho que tiraram a cloak
+2017-10-11 10:16:48	basker	vlw
+2017-10-11 10:17:08	himura	e o arm?
+2017-10-11 10:17:50	basker	entao
+2017-10-11 10:18:08	basker	aquele módulo de rede ENC28J60
+2017-10-11 10:18:12	basker	não é bom
+2017-10-11 10:18:28	basker	e no arm achei meio complicado implementar
+2017-10-11 10:18:49	basker	vi muita gente usando mas nao to afim de estudar e programar até a pilha de rede
+2017-10-11 10:19:04	basker	pra no final das contas ter uma rede que não funciona uma porrada de coisas
+2017-10-11 10:19:40	basker	vi que tem uma placa de rede W5100 e W5500 que são melhores
+2017-10-11 10:19:51	basker	tem api funcionando bem
+2017-10-11 10:19:53	basker	em arm
+2017-10-11 10:19:54	basker	pic
+2017-10-11 10:19:57	basker	avr
+2017-10-11 10:20:15	basker	e a própria placa suporta melhor as conexões de rede
+2017-10-11 10:20:43	basker	problema que no mercadolivre essa placa é mais cara que um shield para arduino inteiro que contém ela
+2017-10-11 10:20:54	himura	hahah
+2017-10-11 10:21:06	basker	acho que vou encomendar do ali essa onça e esperar vir mesmo
+2017-10-11 10:21:22	himura	cara, aqui as empresas de automação tão tudo migrando pra arduino
+2017-10-11 10:21:31	basker	já viu o preço de um arm?
+2017-10-11 10:21:35	himura	sim
+2017-10-11 10:21:37	basker	mais barato que arduino
+2017-10-11 10:21:39	basker	kk
+2017-10-11 10:21:51	basker	já viu o poder daqueles bichinhos
+2017-10-11 10:22:01	himura	eu nunca usei
+2017-10-11 10:22:02	basker	72mhz um stm32 basicao
+2017-10-11 10:22:08	basker	stm32f103c8t6
+2017-10-11 10:22:16	basker	gostei
+2017-10-11 10:22:22	basker	que vc vai no site da st
+2017-10-11 10:22:35	basker	e baixa um programa que gera aquelas interrupcoes etc,,
+2017-10-11 10:22:40	basker	mapeia as portas que vc vai usar
+2017-10-11 10:22:53	basker	sabe nos pic vc precisa configurar os clocks etc...
+2017-10-11 10:23:15	basker	isso o avr tbm tem mas o arduino faz pra ti
+2017-10-11 10:23:41	basker	dai no arm da st tem duas ferramentas(que funcionam no linux)
+2017-10-11 10:24:16	basker	uma para gerar tudo essas portas e vc exporta para a ide que um parceiro da st disponibiliza free
+2017-10-11 10:24:24	himura	a diferença é só que já vem implementada
+2017-10-11 10:24:25	basker	usa o eclipse para programar
+2017-10-11 10:25:36	basker	mapeia as portas no CubeMX e programa no SW4STM32
+2017-10-11 10:25:36	himura	não gosto do eclipse :-P
+2017-10-11 10:25:40	basker	kk
+2017-10-11 10:28:09	basker	cara
+2017-10-11 10:28:12	basker	compra um no ali
+2017-10-11 10:28:22	basker	stm32f103 e um stlink
+2017-10-11 10:28:25	basker	pra gravar
+2017-10-11 10:29:05	himura	ta na lista ja :-)
+2017-10-11 10:29:11	himura	esse mes nao rola
+2017-10-11 10:29:17	himura	comprei um rasp
+2017-10-11 10:29:28	basker	uia
+2017-10-11 10:29:33	basker	deixa te contar
+2017-10-11 10:29:42	basker	bem quando vc me chamou aqui
+2017-10-11 10:29:47	basker	estava pensando nisso
+2017-10-11 10:29:50	basker	tipo
+2017-10-11 10:29:58	basker	um rasp no br compra por uns 200
+2017-10-11 10:30:03	basker	vamos dizer 250 com NF
+2017-10-11 10:30:05	himura	189,90
+2017-10-11 10:30:17	himura	no boleto :-P
+2017-10-11 10:30:21	basker	mas tipo para empresa
+2017-10-11 10:30:37	basker	analisando um modelo de negócios
+2017-10-11 10:30:46	basker	250 com case, fonte etc..
+2017-10-11 10:30:48	basker	e nf
+2017-10-11 10:30:50	himura	ok
+2017-10-11 10:31:43	basker	vai comprar um stm32 + W5500(uma fortuna no br) + vai codar igual um doido
+2017-10-11 10:32:05	basker	ou vai montar uma placa, mandar fabricar fora
+2017-10-11 10:32:22	basker	se teu projeto precisar de outro recurso complica
+2017-10-11 10:32:40	basker	com um rasp, o custo inicial e um pouco mais caro
+2017-10-11 10:32:49	basker	vc tem uma porrada de processamento
+2017-10-11 10:32:55	basker	monte de memória
+2017-10-11 10:32:57	basker	rede
+2017-10-11 10:32:58	basker	wifi
+2017-10-11 10:33:37	himura	o foda é ver os caras pagando 50 lá fora e o cara ter que dar 200 a mais
+2017-10-11 10:33:50	basker	GPIO(um ci de expansao custa trocados, ou usa i2c)
+2017-10-11 10:34:02	basker	himura verdade
+2017-10-11 10:34:24	himura	o Pi 0 vi uns malucos vendendo a 100
+2017-10-11 10:34:31	basker	mas a questão é: Hoje será que valeria mais a pena usar rasp?
+2017-10-11 10:34:34	himura	ele é 5 doleta
+2017-10-11 10:34:39	basker	sim
+2017-10-11 10:36:51	himura	eu comprei pra poder justificar minha bolsa, vou embarcar no drone da faculdade e meter um OpenCV pra contar objetos
+2017-10-11 10:59:11	basker	oloco
+2017-10-11 10:59:19	basker	manja de opencv?
+2017-10-11 10:59:39	basker	há alguns anos atrás tive um insight que eu precisaria do opencv
+2017-10-11 10:59:45	basker	para uma solução de estacionamentos
+2017-10-11 11:00:05	basker	o opencv detectaria onde há vagas livres em um destacionamento de shopping
+2017-10-11 11:00:21	basker	aí faz um app ou um painel para indicar onde tem lugares livres
+2017-10-11 11:00:36	himura	manjo nada, to estudando
+2017-10-11 11:00:52	basker	kk
+2017-10-11 11:00:57	basker	me dá um feedback
+2017-10-11 11:01:50	himura	blz
+2017-10-11 11:02:08	himura	esse ideia do estacionamento é legal
+2017-10-11 11:02:29	himura	um maluco esses tempos fez um tcc aqui parecido
+2017-10-11 11:02:40	himura	só não era com visao computacional
+2017-10-11 11:02:59	basker	sabe o Ephexis aqui do #tsar
+2017-10-11 11:03:04	basker	acho que ele manja de opencv
+2017-10-11 11:03:06	himura	era com sensoriamento convencional ligado a uma app
+2017-10-11 11:03:23	basker	mas esse sensoriamento  não escala
+2017-10-11 11:03:27	himura	esses bruxo aí manjam de tudo 
+2017-10-11 11:03:29	basker	nao tem escalabilidade
+2017-10-11 11:03:30	himura	nunca vi
+2017-10-11 11:03:41	basker	10 anos atrás pode ser que daria certo
+2017-10-11 11:04:13	basker	mas hoje essas coisas que não escalam, mesmo interessantes, dificilmente alavanca
+2017-10-11 11:04:54	himura	sim, uma câmera descartaria o uso de uma porrada de sensores
+2017-10-11 11:04:56	basker	kk
+2017-10-11 11:05:04	basker	himura nao conheco muito ele
+2017-10-11 11:05:13	basker	mas sei que é ferrra
+2017-10-11 11:05:43	himura	também não achei nada que faça referencia a ele
+2017-10-11 11:06:01	himura	o Argorok eu sei que é ninja do reverse
+2017-10-11 11:11:29	basker	nao sei que é ele
+2017-10-11 11:11:58	basker	acho que esse é o outro nick dele
+2017-10-11 11:12:19	basker	nem te mete muito com ele e com os seguidores
+2017-10-11 11:12:32	himura	haha
+2017-10-11 11:13:20	basker	carders
+2017-10-11 11:14:22	himura	acho que bem pior que isso
+2017-10-11 11:16:17	basker	eles só ficam por aqui
+2017-10-11 11:16:24	basker	mas no tsar pessoal é gente boa
+2017-10-11 11:16:25	basker	da paz
+2017-10-11 11:18:16	himura	tenho usado o telegram bastante, tem uns grupos massa
+2017-10-11 11:18:59	himura	foda é que tem uns caras que passam o dia brigando por coisas bobas
+2017-10-11 11:19:14	himura	quando não é ide x ide
+2017-10-11 11:19:22	himura	é SO x SO
+2017-10-11 11:19:48	himura	mas tem uns massa de regex
+2017-10-11 11:20:37	basker	aham
+2017-10-11 11:21:10	basker	regex é uma das coisas que me ajudaram muito já
+2017-10-11 11:21:12	basker	muito mesmo
+2017-10-11 11:21:25	basker	vale a pena isso
+2017-10-11 11:23:10	◣	basker (~basker@uniscan/dev/Basker) saiu (Changing host)
+2017-10-11 11:23:10	◥	basker (~basker@unaffiliated/basker) voltou ao servidor
+2017-10-11 11:24:38	basker	openrs.com.br
+2017-10-11 11:24:48	basker	dá um whois aí
+2017-10-11 11:29:55	himura	novo?
+2017-10-11 11:33:17	basker	poisé
+2017-10-11 11:33:22	basker	achei o nome bonito e comprei
+2017-10-11 11:33:30	basker	estou pensando em subir algo aí
+2017-10-11 11:33:36	basker	nao sei se vai ser algo de elétrica
+2017-10-11 11:33:50	himura	haha
+2017-10-11 11:33:57	basker	ou tava pensando em subir um openclassifieds e um limesurvey
+2017-10-11 11:34:02	himura	cara do dinheiro é outra coisa
+2017-10-11 11:34:08	basker	para fazer um sistema de classificados free
+2017-10-11 11:34:30	basker	e um de pesquisa de opiniao
+2017-10-11 11:34:55	himura	hum, masssa
+2017-10-11 11:34:56	basker	dá uma olhada nas demo online do limesuvey
+2017-10-11 11:35:32	basker	estava pensando em fazer alguma coisa tipo
+2017-10-11 11:35:50	basker	sei lá
+2017-10-11 11:35:52	basker	algo para a cidade
+2017-10-11 11:36:33	himura	legal cara, ainda não abriu aqui :-)
+2017-10-11 11:36:42	himura	rádio e chuva não combinam
+2017-10-11 11:36:51	himura	sempre soube disso 
+2017-10-11 11:40:58	basker	inserir alguns sensores na cidade
+2017-10-11 11:40:58	basker	tipo de energia elétrica
+2017-10-11 11:40:58	basker	nível de água na cx dágua
+2017-10-11 11:40:58	basker	da cidade, não residencial
+2017-10-11 11:40:58	basker	e disponibilizar
+2017-10-11 11:40:58	basker	garimpar informações saca
+2017-10-11 11:40:58	basker	uma câmera com imagens em tempo real da cidade
+2017-10-11 11:40:58	basker	algo assim
+2017-10-11 11:40:58	basker	kk
+2017-10-11 11:40:58	basker	net via rádio ai?
+2017-10-11 11:40:58	basker	regula a antena :)
+2017-10-11 11:43:03	himura	a vizinha tem cachorro, mas legal a ideia, massa mesmo
+2017-10-11 11:43:22	himura	se precisar de ajuda em algo dá um grito
+2017-10-11 11:43:32	basker	beleza
+2017-10-11 11:43:43	himura	isso aí dá um tcc já em
+2017-10-11 11:43:44	basker	kk
+2017-10-11 11:43:50	basker	que isso
+2017-10-11 11:43:59	basker	tá sampeando a net da vizinha?
+2017-10-11 11:44:28	himura	vai pagar 2k de faculdade pra ver como é
+2017-10-11 11:45:07	basker	eita
+2017-10-11 11:48:09	himura	to brincando
+2017-10-11 11:48:24	himura	mas dia de chuva é bem porco mesmo

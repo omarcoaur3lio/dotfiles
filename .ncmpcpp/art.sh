@@ -1,13 +1,16 @@
 #!/bin/bash
 
-MUSIC_DIR=/home/marco/Música
+#put this file to ~/.ncmpcpp/
 
+MUSIC_DIR=${HOME}/Música #path to your music dir
+#COVER=/tmp/nmpcpp-cover.jpg
 COVER=/tmp/cover.jpg
+COVER2=/tmp/nmpcpp-thumb.jpg
 
-function reset_background
-{
-    printf "\e]20;;100x100+1000+1000\a"
-}
+#function reset_background
+#{
+#    printf "\e]20;;100x100+1000+1000\a"
+#}
 
 {
     album="$(mpc --format %album% current)"
@@ -18,18 +21,19 @@ function reset_background
 
     covers="$(find "$album_dir" -type d -exec find {} -maxdepth 1 -type f -iregex ".*/.*\(${album}\|cover\|folder\|artwork\|front\).*[.]\(jpe?g\|png\|gif\|bmp\)" \; )"
     src="$(echo -n "$covers" | head -n1)"
-    rm -f "$COVER" 
+    rm -f "$COVER"
     if [[ -n "$src" ]] ; then
         #resize the image's width to 300px 
         convert "$src" -resize 300x "$COVER"
+        convert "$src" -resize 100x "$COVER2"
         if [[ -f "$COVER" ]] ; then
-           #scale down the cover to 70% of the original
-           #place it 0% away from left and 4% away from top.
-           printf "\e]20;${COVER};70x70+0+4:op=keep-aspect\a"
-        else
-            reset_background
+			notify-send -i $COVER2 "ncmpcpp" "Tocando..."
+      		#scale down the cover to 30% of the original
+           	printf "${COVER}"
+        #else
+        #    reset_background
         fi
-    else
-        reset_background
+    #else
+    #    reset_background
     fi
 } &

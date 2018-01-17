@@ -315,4 +315,6 @@ PERL_MM_OPT="INSTALL_BASE=/home/marco/perl5"; export PERL_MM_OPT;
  export LC_COLLATE="C"
  umask 022
 
-
+# Config virtualenv
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/share/oh-my-zsh/plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh

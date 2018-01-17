@@ -111,30 +111,30 @@ URxvt.url-select.underline: true
 
 *cursorColor:               #C5C5C5
 !*.background:               [100]#0B0D0E
-*.background:               [97]#0D0E10
+*.background:               [93]#080A0B
 *foreground:                #c5c5c5
 *fadeColor :                #002233
 
 ! black
 *color0:                    #0D0E10
-*color8:                    #13E5A8
+*color8:                    #26F2D4
 
 ! red
 *color1:                    #565952
-*color9:                    #BABDB6
+*color9:                    #797F7F
 
 ! green
 *color2:                    #35363C
 *color10:                   #01DD94
 
 ! yellow
-*color3:                    #13E5A8
-*color11:                   #13E5A8
+*color3:                    #13E5DE
+*color11:                   #13E5CE
 
 
 ! blue
 *color4:                    #13E5A8
-*color12:                   #2AE5CD
+*color12:                   #10ECEC
 
 ! magenta
 *color5:                    #EE1F56
@@ -145,5 +145,5 @@ URxvt.url-select.underline: true
 *color14:                   #2FE6E2
 
 ! white
-*color7:                    #98C0BB
+*color7:                    #666868
 *color15:                   #CFD7D7
