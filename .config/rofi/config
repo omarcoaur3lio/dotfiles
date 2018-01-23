@@ -6,7 +6,9 @@
 !**************************************
 rofi.terminal:      alacritty
 rofi.sidebar-mode:  true
-rofi.theme:         sidestyle.rasi
+rofi.fullscreen:    true
+!rofi.theme:         sidestyle.rasi
+rofi.theme:         asarch.rasi
 rofi.show-icons: 	false
 drun-icon-theme: 	"[archOS]"
-rofi.font: 			Open Sans 9
+rofi.font: 			Open Sans 10
