@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+
+"""
+DocString for $TM_FILENAME.
+Created by $TM_FULLNAME (C) $TM_YEAR
+Notes: 
+	${1:descrição}
+Examples: 
+	\$ ${2:python $TM_FILENAME}
+
+"""
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>dcs</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.python</scope>
+</snippet>

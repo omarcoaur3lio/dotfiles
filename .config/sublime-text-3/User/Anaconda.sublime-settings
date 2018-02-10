@@ -1,0 +1,17 @@
+{
+	// Define o interpretador do python
+	"python_interpreter": "python3", 
+	// Utiliza incones para marcar os erros e warnings ('alpha', 'hard', "retina")
+	"anaconda_gutter_theme": "alpha",
+	// Mostra os erros na hora de salvar
+	"anaconda_linter_show_errors_on_save": true,
+	// Ativa ou desativa a correção conforme a pep8
+    "pep8": true,
+    // Ativa ou desativa a correção conforme a pep257 (trata as docstrings)
+    "pep257": false,
+    // Define o tamanho maxímo de caracteres na linha
+    "pep8_max_line_length": 79,
+    // Define o nível de agressividade da autoformatação da pep8 (0 = normal, 2 = agressivo)
+    "aggressive": 2,
+
+}
