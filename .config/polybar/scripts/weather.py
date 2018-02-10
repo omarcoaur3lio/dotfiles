@@ -22,7 +22,9 @@ try:
     # snow = "%{F#00EDFF}%{F-}"
     # Yellow Color
     # sun = "%{F#FAED06}%{F-}"
-
+    # red color
+    # cloud = "%{F#d61e2c}%{F-}"
+    
     cloud = "%{F#00EDFF}%{F-}"
     snow = "%{F#00EDFF}%{F-}"
     sun = "%{F#00EDFF}%{F-}"

@@ -15,8 +15,8 @@
 
 sxhkd &
 compton &
-# nm-applet & 
-# megasync &
+nm-applet & 
+#megasync &
 [ !  -s ~/.config/mpd/pid ] && mpd & 
 # Solve problem Java with Netbeans and Pycharm
 wmname LG3D &
@@ -26,7 +26,7 @@ setxkbmap br &
 $HOME/.config/polybar/launch.sh &
 
 # Launch tint2
-# tint2 &
+#tint2 &
 
 # Connect secondary monitor and auto adjust your resolution
 $HOME/scripts/autoHDMI.sh &

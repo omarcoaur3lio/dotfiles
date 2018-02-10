@@ -17,7 +17,6 @@ xft*hintstyle:              hintslight
 Xft.autohint:               1
 xft*lcdfilter:              lcddefault
 
-
 urxvt.font:xft:Iosevka:size=11
 urxvt.boldFont:xft:Iosevka:size=9
 URxvt.font:xft:Font\ Awesome:antialias=true:pixelsize=10
@@ -58,7 +57,7 @@ URxvt.termName:             rxvt-unicode-256color
 URxvt.geometry:             100x24+302+161
 URxvt*cursorUnderline:      true
 URxvt*cursorBlink:          true
-urxvt*depth: 32
+URxvt*depth: 				32
 
 
 !!---------------------------------------------------------------------------!!
@@ -110,8 +109,8 @@ URxvt.url-select.underline: true
 !!----------------------------------------------------------------------------!!
 
 *cursorColor:               #C5C5C5
-!*.background:               [100]#0B0D0E
-*.background:               [93]#080A0B
+*.background:               [98]#050506
+!*.background:               [93]#080A0B
 *foreground:                #c5c5c5
 *fadeColor :                #002233
 
@@ -125,10 +124,10 @@ URxvt.url-select.underline: true
 
 ! green
 *color2:                    #35363C
-*color10:                   #01DD94
+*color10:                   #5CEAF4
 
 ! yellow
-*color3:                    #13E5DE
+*color3:                    #43DDB5
 *color11:                   #13E5CE
 
 

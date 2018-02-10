@@ -299,7 +299,10 @@ export MANPAGER=less
     }    
 
 # added by Anaconda3 installer
-export PATH="/home/marco/anaconda3/bin:$PATH"
+# export PATH="/home/marco/anaconda3/bin:$PATH"
+
+# corrige erro anaconda + urxvt
+# TERM="xterm-256color"
 
 # ls colored:
 export ZLS_COLORS=$LS_COLORS
@@ -315,6 +318,3 @@ PERL_MM_OPT="INSTALL_BASE=/home/marco/perl5"; export PERL_MM_OPT;
  export LC_COLLATE="C"
  umask 022
 
-# Config virtualenv
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/share/oh-my-zsh/plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh
