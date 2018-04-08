@@ -1,4 +1,4 @@
-
+  
 #:::::::::::::::::::::::::::
 #     ━━┓┏━┓╻  ╻┏━┓┏━╸    ::
 #     ┏━┛┗━┓┃━━┃┣┳┛┃      :: 
@@ -7,13 +7,14 @@
 #:::::::::::::::::::::::::::
 
 # Path to your oh-my-zsh installation.
-ZSH=/usr/share/oh-my-zsh/
+ZSH=/home/marco/.oh-my-zsh/
 
 # ZSH theme. Necessary package oh-my-zsh
 ZSH_THEME="agnoster"
 #ZSH_THEME="cypher"
 #ZSH_THEME="adben"
 #ZSH_THEME="josh"
+#ZSH_THEME="zsh-theme-powerlevel9k/powerlevel9k"
 
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
@@ -29,10 +30,11 @@ source ~/.zsh_aliases
 source $ZSH/oh-my-zsh.sh
 
 #Syntax-highlighting  similar to shell Fish. Its necessary install the package zsh-syntax-highlighting
-#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /home/marco/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #Fish-like autosuggestions for zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /home/marco/.oh-my-zsh/plugins/bgnotify/bgnotify.plugin.zsh
 
 # Historic
  export HISTFILE=${HOME}/.zsh_history
@@ -299,10 +301,10 @@ export MANPAGER=less
     }    
 
 # added by Anaconda3 installer
-# export PATH="/home/marco/anaconda3/bin:$PATH"
+export PATH="/home/marco/anaconda3/bin:$PATH"
 
 # corrige erro anaconda + urxvt
-# TERM="xterm-256color"
+TERM="xterm-256color"
 
 # ls colored:
 export ZLS_COLORS=$LS_COLORS
@@ -318,3 +320,5 @@ PERL_MM_OPT="INSTALL_BASE=/home/marco/perl5"; export PERL_MM_OPT;
  export LC_COLLATE="C"
  umask 022
 
+export WORKON_HOME=$HOME/.virtualenvs
+source ~/.oh-my-zsh/plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh
