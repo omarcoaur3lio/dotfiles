@@ -583,7 +583,7 @@ image_source='/home/marco/Imagens/himura_neo.png'
 #       Change this to 'Lubuntu', 'Xubuntu', 'Ubuntu-GNOME' or 'Ubuntu-Budgie' to use the flavors.
 # NOTE: Arch, Crux and Gentoo have a smaller logo variant.
 #       Change this to 'arch_small', 'crux_small' or 'gentoo_small' to use the small logos.
-ascii_distro="auto"
+ascii_distro="aix"
 
 # Ascii Colors
 #

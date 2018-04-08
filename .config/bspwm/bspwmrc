@@ -86,6 +86,7 @@ bspc rule -a Nautilus pseudo_tiled=on
 bspc rule -a Transmission-gtk pseudo_tiled=on
 bspc rule -a Steam floating=on
 bspc rule -a feh floating=on manage=off
+bspc rule -a nomacs manage=off follow=on
 
 # Send to www desktop
 bspc rule --add Firefox desktop='www' follow=on

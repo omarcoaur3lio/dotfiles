@@ -183,10 +183,10 @@ shift + @button{1-3}
 #####################################
 
 XF86AudioRaiseVolume
-	amixer set Master 1000{+} unmute
+	amixer set Master 2%+
 
 XF86AudioLowerVolume
-	amixer set Master 1000{-} unmute
+	amixer set Master 2%-
 
 XF86AudioMute
 	amixer -q set Master toggle 	

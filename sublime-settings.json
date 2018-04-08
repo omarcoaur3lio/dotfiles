@@ -1,0 +1,16 @@
+{
+	"Seti_tabs_small": true,
+	"Seti_teal_label": true,
+	"Seti_teal_statusbar": true,
+	"Seti_teal_tab": true,
+	"Seti_teal_tabclose": true,
+	"Themr": "Seti_teal_scrollbar",
+	"color_scheme": "Packages/User/azure.tmTheme",
+	"font_face": "iosevka",
+	"font_size": 10,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"theme": "Seti_orig.sublime-theme"
+}
