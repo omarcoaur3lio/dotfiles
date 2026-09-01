@@ -3,8 +3,8 @@ local gh = require('pack').gh
 -- [[ Colorscheme ]]
 
 -- Local Roteki Theme (Development Mode)
--- vim.opt.rtp:prepend('/Users/marco/workplace/roteki-theme-nvim')
-vim.pack.add { gh 'omarcoaur3lio/roteki-theme.nvim' }
+vim.opt.rtp:prepend('/Users/devsynter/workplace/marco/roteki-theme.nvim')
+-- vim.pack.add { gh 'omarcoaur3lio/roteki-theme.nvim' }
 
 -- Shortcut to reload the theme during development
 vim.keymap.set('n', '<leader>rr', function()

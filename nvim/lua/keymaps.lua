@@ -37,7 +37,7 @@ vim.diagnostic.config {
   underline = { severity = { min = vim.diagnostic.severity.WARN } },
 
   -- Can switch between these as you prefer
-  virtual_text = true, -- Text shows up at the end of the line
+  virtual_text = false, -- Text shows up at the end of the line
   virtual_lines = false, -- Text shows up underneath the line, with virtual lines
 
   -- Auto open the float, so you can easily read the errors when jumping with `[d` and `]d`
@@ -94,5 +94,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
   callback = function() vim.hl.on_yank() end,
 })
+
+-- Toggle diagnostic virtual text
+vim.keymap.set('n', '<leader>tv', function()
+  local is_enabled = vim.diagnostic.config().virtual_text
+  vim.diagnostic.config({ virtual_text = not is_enabled })
+  print("Virtual text " .. (is_enabled and "desabilitado" or "habilitado"))
+end, { desc = '[T]oggle [V]irtual text' })
 
 -- vim: ts=2 sts=2 sw=2 et

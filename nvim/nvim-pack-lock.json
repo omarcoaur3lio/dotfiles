@@ -92,10 +92,6 @@
       "rev": "a488957d803943a4201ac3b774913fcafa9e6b3a",
       "src": "https://github.com/olivercederborg/poimandres.nvim"
     },
-    "roteki-theme-nvim": {
-      "rev": "c668c0284d71f19bbf418511a7937d5f9db43af1",
-      "src": "/Users/marco/workplace/roteki-theme-nvim"
-    },
     "roteki-theme.nvim": {
       "rev": "c668c0284d71f19bbf418511a7937d5f9db43af1",
       "src": "https://github.com/omarcoaur3lio/roteki-theme.nvim"
@@ -123,6 +119,10 @@
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
       "src": "https://github.com/folke/which-key.nvim"
+    },
+    "xeno.nvim": {
+      "rev": "4d41f04fa207e6516f5b8f545432ce7978529133",
+      "src": "https://github.com/kyzabuilds/xeno.nvim"
     }
   }
 }
