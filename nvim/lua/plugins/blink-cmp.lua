@@ -17,7 +17,17 @@ require('blink.cmp').setup {
   },
 
   completion = {
-    documentation = { auto_show = false, auto_show_delay_ms = 500 },
+    documentation = {
+      auto_show = false,
+      auto_show_delay_ms = 500,
+      window = { border = 'rounded' },
+    },
+    menu = {
+      border = 'rounded',
+      draw = {
+        padding = 1,
+      },
+    },
   },
 
   sources = {
