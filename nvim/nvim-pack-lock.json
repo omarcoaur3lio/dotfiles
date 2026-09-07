@@ -34,6 +34,10 @@
       "rev": "25a5c98ca2f6bb0b69f5e2654a78f0d7c7e0721d",
       "src": "https://github.com/oskarnurm/koda.nvim"
     },
+    "lualine.nvim": {
+      "rev": "221ce6b2d999187044529f49da6554a92f740a96",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
+    },
     "mason-lspconfig.nvim": {
       "rev": "7b01e2974a47d489bb92f47a41e4c0088ea8f86e",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
@@ -91,6 +95,10 @@
     "poimandres.nvim": {
       "rev": "a488957d803943a4201ac3b774913fcafa9e6b3a",
       "src": "https://github.com/olivercederborg/poimandres.nvim"
+    },
+    "roteki-theme-nvim": {
+      "rev": "c668c0284d71f19bbf418511a7937d5f9db43af1",
+      "src": "/Users/marco/workplace/roteki-theme-nvim"
     },
     "roteki-theme.nvim": {
       "rev": "c668c0284d71f19bbf418511a7937d5f9db43af1",
