@@ -14,6 +14,10 @@ require('which-key').setup {
       -- CR = "↵ ", (Enter)
     },
   },
+  win = {
+    border = 'rounded', -- Opções: 'none', 'single', 'double', 'rounded', 'solid', 'shadow'
+    padding = { 1, 2 },
+  },
 
   spec = {
     { '<leader>s', group = '[S]earch', mode = { 'n', 'v' } },
