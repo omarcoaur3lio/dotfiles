@@ -9,7 +9,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>bd', function()
   local bd = require('mini.bufremove').delete
   if vim.bo.modified then
-    local choice = vim.fn.confirm(('Save changes to %q?'):format(vim.fn.bufname()), "&Yes\n&No\n&Cancel")
+    local choice = vim.fn.confirm(('Save changes to %q?'):format(vim.fn.bufname()), '&Yes\n&No\n&Cancel')
     if choice == 1 then
       vim.cmd.write()
       bd(0, false)
@@ -28,16 +28,16 @@ vim.diagnostic.config {
   float = {
     border = 'rounded',
     source = 'if_many',
-    header = { "  Diagnostics:", "DiagnosticHeader" },
-    prefix = function(diagnostic, i, total)
-      return "  " .. tostring(i) .. ". "
-    end,
-    suffix = "  ",
+    header = { '  Diagnostics:', 'DiagnosticHeader' },
+    prefix = function(diagnostic, i, total) return '  ' .. tostring(i) .. '. ' end,
+    suffix = '  ',
   },
-  underline = { severity = { min = vim.diagnostic.severity.WARN } },
+  underline = false,
+  -- underline = { severity = { min = vim.diagnostic.severity.WARN } },
 
   -- Can switch between these as you prefer
   virtual_text = false, -- Text shows up at the end of the line
+  signs = false,
   virtual_lines = false, -- Text shows up underneath the line, with virtual lines
 
   -- Auto open the float, so you can easily read the errors when jumping with `[d` and `]d`
@@ -95,11 +95,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function() vim.hl.on_yank() end,
 })
 
--- Toggle diagnostic virtual text
+-- Toggle diagnostic virtual text and signs
 vim.keymap.set('n', '<leader>tv', function()
   local is_enabled = vim.diagnostic.config().virtual_text
-  vim.diagnostic.config({ virtual_text = not is_enabled })
-  print("Virtual text " .. (is_enabled and "desabilitado" or "habilitado"))
-end, { desc = '[T]oggle [V]irtual text' })
+  local next_state = not is_enabled
+  vim.diagnostic.config {
+    virtual_text = next_state,
+    signs = next_state,
+  }
+  print('Diagnósticos (Mensagens e Ícones) ' .. (is_enabled and 'desabilitados' or 'habilitados'))
+end, { desc = '[T]oggle [V]irtual text and signs' })
 
 -- vim: ts=2 sts=2 sw=2 et

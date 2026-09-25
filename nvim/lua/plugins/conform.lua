@@ -15,6 +15,7 @@ require('conform').setup {
       html = true,
       css = true,
       lua = true,
+      markdown = true,
     }
     if enabled_filetypes[vim.bo[bufnr].filetype] then
       return { timeout_ms = 1000 }
@@ -35,6 +36,7 @@ require('conform').setup {
     html = { 'prettierd', 'prettier', stop_after_first = true },
     css = { 'prettierd', 'prettier', stop_after_first = true },
     lua = { 'stylua' },
+    markdown = { 'prettierd', 'prettier', stop_after_first = true },
   },
 }
 
