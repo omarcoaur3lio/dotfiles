@@ -10,9 +10,14 @@ require('conform').setup {
       javascriptreact = true,
       typescript = true,
       typescriptreact = true,
+      json = true,
+      jsonc = true,
+      html = true,
+      css = true,
+      lua = true,
     }
     if enabled_filetypes[vim.bo[bufnr].filetype] then
-      return { timeout_ms = 500 }
+      return { timeout_ms = 1000 }
     else
       return nil
     end
@@ -25,6 +30,11 @@ require('conform').setup {
     javascriptreact = { 'prettierd', 'prettier', stop_after_first = true },
     typescript = { 'prettierd', 'prettier', stop_after_first = true },
     typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
+    json = { 'prettierd', 'prettier', stop_after_first = true },
+    jsonc = { 'prettierd', 'prettier', stop_after_first = true },
+    html = { 'prettierd', 'prettier', stop_after_first = true },
+    css = { 'prettierd', 'prettier', stop_after_first = true },
+    lua = { 'stylua' },
   },
 }
 

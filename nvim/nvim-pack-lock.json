@@ -96,10 +96,6 @@
       "rev": "a488957d803943a4201ac3b774913fcafa9e6b3a",
       "src": "https://github.com/olivercederborg/poimandres.nvim"
     },
-    "roteki-theme-nvim": {
-      "rev": "c668c0284d71f19bbf418511a7937d5f9db43af1",
-      "src": "/Users/marco/workplace/roteki-theme-nvim"
-    },
     "roteki-theme.nvim": {
       "rev": "c668c0284d71f19bbf418511a7937d5f9db43af1",
       "src": "https://github.com/omarcoaur3lio/roteki-theme.nvim"

@@ -80,6 +80,12 @@ local servers = {
     },
   },
 
+  -- ESLint Language Server (provides fast diagnostics and code actions)
+  eslint = {},
+
+  -- JSON Language Server (package.json, tsconfig.json schema validation)
+  jsonls = {},
+
   stylua = {}, -- Used to format Lua code
 
   -- Special Lua Config, as recommended by neovim help docs
@@ -128,9 +134,7 @@ require('mason').setup {}
 local ensure_installed = vim.tbl_keys(servers or {})
 vim.list_extend(ensure_installed, {
   'markdownlint', -- used by plugins.lint for markdown
-  -- NOTE: 'eslint' (plugins.lint, JS/TS) is intentionally not listed here --
-  -- it resolves to the project's local `node_modules/.bin/eslint` (or a
-  -- global install) and has no matching Mason package under that name.
+  'prettier',     -- used by plugins.conform for JS/TS/JSON formatting
 })
 
 require('mason-tool-installer').setup { ensure_installed = ensure_installed }
