@@ -38,7 +38,10 @@ require('blink.cmp').setup {
 
   fuzzy = { implementation = 'lua' },
 
-  signature = { enabled = true },
+  signature = {
+    enabled = true,
+    window = { border = 'rounded' },
+  },
 }
 
 -- vim: ts=2 sts=2 sw=2 et
