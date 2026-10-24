@@ -12,16 +12,6 @@ local gh = require('pack').gh
 vim.pack.add { gh 'j-hui/fidget.nvim' }
 require('fidget').setup {}
 
--- Add borders to LSP hover and signature help windows
-vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
-  border = 'rounded',
-})
-
-vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-  border = 'rounded',
-})
-
-
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
   callback = function(event)
@@ -146,6 +136,7 @@ local ensure_installed = vim.tbl_keys(servers or {})
 vim.list_extend(ensure_installed, {
   'markdownlint', -- used by plugins.lint for markdown
   'prettier',     -- used by plugins.conform for JS/TS/JSON formatting
+  'prettierd',    -- used by plugins.conform for fast JS/TS/JSON formatting
 })
 
 require('mason-tool-installer').setup { ensure_installed = ensure_installed }
