@@ -1,0 +1,12 @@
+# Segredos e overrides locais
+**/.env
+**/.env.*
+!**/.env.example
+*.local
+*.secret
+zsh/.zshrc.local
+
+# macOS e Python
+.DS_Store
+__pycache__/
+*.pyc

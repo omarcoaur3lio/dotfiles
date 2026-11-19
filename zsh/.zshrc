@@ -54,6 +54,15 @@ export PATH="$JAVA_HOME/bin:$PATH"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin"
 
+# Configuracoes locais e segredos (nunca versionados no git)
+[[ -r "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
+
+# Sugestoes proativas com IA no Rex (rex capture + Gemini Flash-Lite)
+_ZSH_DOTFILES_DIR="${${(%):-%x}:A:h}"
+[[ -r "$_ZSH_DOTFILES_DIR/plugins/rex-ai-suggest/rex-ai-suggest.plugin.zsh" ]] && \
+  source "$_ZSH_DOTFILES_DIR/plugins/rex-ai-suggest/rex-ai-suggest.plugin.zsh"
+unset _ZSH_DOTFILES_DIR
+
 # Inicializa o prompt Starship
 command -v starship &>/dev/null && eval "$(starship init zsh)"
 

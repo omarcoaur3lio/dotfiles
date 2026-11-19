@@ -1,0 +1,891 @@
+#!/usr/bin/env python3
+"""Proactive and on-demand Gemini command suggestion helper for Rex + Zsh."""
+
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import re
+import shutil
+import subprocess
+import sys
+import urllib.error
+import urllib.request
+from pathlib import Path
+
+DEFAULT_MODEL = "gemini-3.5-flash-lite"
+DEFAULT_API_BASE_URL = "https://generativelanguage.googleapis.com/v1beta"
+DEFAULT_PROACTIVE_MODE = "smart"
+DEFAULT_KEYCHAIN_SERVICE = "rex-ai-gemini"
+DEFAULT_CAPTURE_LINES = 60
+DEFAULT_CAPTURE_CHARS = 4000
+MAX_SUGGESTION_CHARS = 300
+
+TRIVIAL_COMMANDS = frozenset(
+    {
+        "cd",
+        "ls",
+        "ll",
+        "la",
+        "pwd",
+        "clear",
+        "cls",
+        "history",
+        "exit",
+        "logout",
+        "vim",
+        "nvim",
+        "vi",
+        "nano",
+        "less",
+        "more",
+        "man",
+        "top",
+        "htop",
+        "btop",
+        "tmux",
+        "agy",
+        "claude",
+        "codex",
+        "ssh",
+        "open",
+        "echo",
+        "true",
+        "false",
+        "rex-ai-toggle",
+        "rex-ai-status",
+        "rex-ai-test",
+    }
+)
+
+HIGH_SIGNAL_COMMANDS = frozenset(
+    {
+        "git",
+        "npm",
+        "pnpm",
+        "yarn",
+        "bun",
+        "npx",
+        "cargo",
+        "go",
+        "python",
+        "python3",
+        "pytest",
+        "uv",
+        "pip",
+        "pip3",
+        "jest",
+        "vitest",
+        "docker",
+        "kubectl",
+        "helm",
+        "terraform",
+        "make",
+        "brew",
+        "gh",
+        "firebase",
+        "flutter",
+        "gradle",
+        "gradlew",
+        "mvn",
+        "xcodebuild",
+        "swift",
+        "curl",
+        "http",
+        "rg",
+        "fd",
+        "find",
+        "tar",
+        "unzip",
+        "chmod",
+        "chown",
+        "lsof",
+        "kill",
+    }
+)
+
+SENSITIVE_COMMAND_PATTERNS = (
+    re.compile(r"^\s*(?:env|printenv|export|set|declare)\b", re.IGNORECASE),
+    re.compile(r"\.(?:env|pem|key|p12|pfx|jks)\b", re.IGNORECASE),
+    re.compile(r"\bid_(?:rsa|ed25519|ecdsa)\b", re.IGNORECASE),
+    re.compile(
+        r"\b(?:credentials|secrets?\.ya?ml|secrets?\.json)\b", re.IGNORECASE
+    ),
+    re.compile(
+        r"\b(?:veracrypt|passwd|password|secret|token|keychain|"
+        r"security\s+find-|ssh-add|ssh-keygen|gpg|age|sops|vault|1password)\b",
+        re.IGNORECASE,
+    ),
+    re.compile(r"\b(?:op|bw)\s+(?:get|item|signin|read)\b", re.IGNORECASE),
+    re.compile(
+        r"\b(?:aws\s+configure|gcloud\s+auth|gh\s+auth|npm\s+login|"
+        r"docker\s+login|kubectl\s+get\s+secret)\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"(?:^|\s)[A-Za-z_]*(?:SECRET|TOKEN|PASS(?:WORD|WD)?|API_?KEY|"
+        r"PRIVATE_?KEY|ACCESS_?KEY|CREDENTIAL)[A-Za-z_]*=",
+        re.IGNORECASE,
+    ),
+)
+
+DESTRUCTIVE_COMMAND_PATTERNS = (
+    re.compile(r"\brm\s+-[A-Za-z]*r[A-Za-z]*f\b", re.IGNORECASE),
+    re.compile(r"\brm\s+-[A-Za-z]*f[A-Za-z]*r\b", re.IGNORECASE),
+    re.compile(r"\brm\s+(?:[^\n]*\s)?-r\s+-f\b", re.IGNORECASE),
+    re.compile(r"\brm\s+(?:[^\n]*\s)?-f\s+-r\b", re.IGNORECASE),
+    re.compile(r"\bmkfs(?:\.[a-z0-9]+)?\b", re.IGNORECASE),
+    re.compile(r"\bdd\s+if=", re.IGNORECASE),
+    re.compile(
+        r"\bgit\s+push\b[^\n]*(?:--force\b|-f\b)", re.IGNORECASE
+    ),
+    re.compile(r"\bgit\s+reset\s+--hard\b", re.IGNORECASE),
+    re.compile(r"\bchmod\s+[^\n]*-R[^\n]*\b777\b", re.IGNORECASE),
+    re.compile(r":\(\)\s*\{"),
+    re.compile(r"\b(?:shutdown|reboot)\b", re.IGNORECASE),
+    re.compile(r"\bdiskutil\s+erase", re.IGNORECASE),
+)
+
+ANSI_ESCAPE_RE = re.compile(
+    r"\x1b\[[0-?]*[ -/]*[@-~]"
+    r"|\x1b\][^\x07\x1b]*(?:\x07|\x1b\\)"
+    r"|\x1b[@-Z\\-_]"
+)
+
+REDACTION_RULES: tuple[tuple[re.Pattern[str], str], ...] = (
+    (
+        re.compile(
+            r"-----BEGIN [A-Z0-9 ]*PRIVATE KEY-----[\s\S]*?"
+            r"-----END [A-Z0-9 ]*PRIVATE KEY-----"
+        ),
+        "[REDACTED_PRIVATE_KEY]",
+    ),
+    (
+        re.compile(
+            r"\b((?:https?|postgres(?:ql)?|mysql|mongodb(?:\+srv)?|"
+            r"redis|amqp|ftp)://)([^/\s:@]*):([^/\s@]+)@",
+            re.IGNORECASE,
+        ),
+        r"\1[REDACTED]@",
+    ),
+    (
+        re.compile(
+            r"\b(authorization\s*:\s*(?:bearer|basic|token|apikey)\s+)\S+",
+            re.IGNORECASE,
+        ),
+        r"\1[REDACTED]",
+    ),
+    (
+        re.compile(r"\b(x-(?:goog-)?api-key\s*:\s*)\S+", re.IGNORECASE),
+        r"\1[REDACTED]",
+    ),
+    (
+        re.compile(
+            r"\b(bearer|basic)\s+[A-Za-z0-9._~+/=-]{8,}", re.IGNORECASE
+        ),
+        r"\1 [REDACTED]",
+    ),
+    (re.compile(r"\bAIza[0-9A-Za-z_-]{20,}"), "[REDACTED_GOOGLE_KEY]"),
+    (
+        re.compile(r"\bsk-(?:ant-|proj-)?[A-Za-z0-9_-]{16,}"),
+        "[REDACTED_KEY]",
+    ),
+    (re.compile(r"\bgh[pousr]_[A-Za-z0-9]{20,}"), "[REDACTED_GITHUB_TOKEN]"),
+    (
+        re.compile(r"\bgithub_pat_[A-Za-z0-9_]{20,}"),
+        "[REDACTED_GITHUB_TOKEN]",
+    ),
+    (re.compile(r"\bA(?:KIA|SIA)[0-9A-Z]{16}\b"), "[REDACTED_AWS_KEY]"),
+    (re.compile(r"\bxox[baprs]-[A-Za-z0-9-]{10,}"), "[REDACTED_SLACK_TOKEN]"),
+    (re.compile(r"\bnpm_[A-Za-z0-9]{20,}"), "[REDACTED_NPM_TOKEN]"),
+    (re.compile(r"\bglpat-[A-Za-z0-9_-]{20,}"), "[REDACTED_GITLAB_TOKEN]"),
+    (
+        re.compile(
+            r"\beyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}"
+        ),
+        "[REDACTED_JWT]",
+    ),
+    (
+        re.compile(
+            r"(?im)\b((?:[A-Za-z_][A-Za-z0-9_]*)?(?:SECRET|TOKEN|PASS(?:WORD|WD)?|"
+            r"API_?KEY|PRIVATE_?KEY|ACCESS_?KEY|AUTH|CREDENTIAL|DATABASE_URL|"
+            r"MONGO_URI|REDIS_URL|DSN|CLIENT_SECRET)[A-Za-z0-9_]*)"
+            r'[^\S\n]*=[^\S\n]*(?:"[^"\n]*"|\'[^\'\n]*\'|[^\s#;]+)'
+        ),
+        r"\1=[REDACTED]",
+    ),
+    (
+        re.compile(
+            r'(?im)(["\']?\b(?:[A-Za-z_][A-Za-z0-9_-]*)?(?:SECRET|TOKEN|PASS(?:WORD|WD)?|'
+            r"API_?KEY|PRIVATE_?KEY|ACCESS_?KEY|AUTH|CREDENTIAL|DATABASE_URL|"
+            r"MONGO_URI|REDIS_URL|DSN|CLIENT_SECRET)[A-Za-z0-9_-]*[\"']?"
+            r'[^\S\n]*:[^\S\n]*)(?:"[^"\n]*"|\'[^\'\n]*\'|[^\s,}\]]+)'
+        ),
+        r"\1[REDACTED]",
+    ),
+    (
+        re.compile(
+            r"(?i)(?<!\S)(--?(?:api-?key|token|password|passwd|secret|auth))"
+            r'(=|\s+)(?:"[^"\n]*"|\'[^\'\n]*\'|\S+)'
+        ),
+        r"\1\2[REDACTED]",
+    ),
+)
+
+_ENV_PREFIX_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*=")
+_WRAPPER_COMMANDS = frozenset({"sudo", "command", "time", "noglob", "builtin", "env"})
+
+
+def _log_debug(message: str) -> None:
+    """Append a non-secret diagnostic message when REX_AI_DEBUG_LOG is set."""
+    log_path = os.environ.get("REX_AI_DEBUG_LOG", "").strip()
+    if not log_path:
+        return
+    try:
+        with open(log_path, "a", encoding="utf-8") as handle:
+            handle.write(redact_secrets(message).rstrip() + "\n")
+    except OSError:
+        pass
+
+
+def _parse_int_env(name: str, default: int, minimum: int = 1) -> int:
+    raw = os.environ.get(name, "").strip()
+    if not raw:
+        return default
+    try:
+        value = int(raw)
+        return value if value >= minimum else default
+    except ValueError:
+        return default
+
+
+def _parse_float_env(name: str, default: float, minimum: float = 0.2) -> float:
+    raw = os.environ.get(name, "").strip()
+    if not raw:
+        return default
+    try:
+        value = float(raw)
+        return value if value >= minimum else default
+    except ValueError:
+        return default
+
+
+def has_opt_out_marker(cwd: str) -> bool:
+    """Return True if .no-rex-ai exists in cwd or an ancestor up to $HOME or /."""
+    try:
+        current = Path(cwd).resolve()
+    except OSError:
+        current = Path(cwd)
+
+    try:
+        home = Path.home().resolve()
+    except OSError:
+        home = Path.home()
+
+    stop_at_home = current == home or home in current.parents
+
+    while True:
+        try:
+            if (current / ".no-rex-ai").exists():
+                return True
+        except OSError:
+            pass
+        if stop_at_home and current == home:
+            break
+        if current.parent == current:
+            break
+        current = current.parent
+
+    return False
+
+
+def is_sensitive_command(cmd: str, extra_pattern: str | None = None) -> bool:
+    """Return True if cmd likely handles or outputs credentials or secrets."""
+    text = (cmd or "").strip()
+    if not text:
+        return False
+
+    for pattern in SENSITIVE_COMMAND_PATTERNS:
+        if pattern.search(text):
+            return True
+
+    user_pattern = (
+        os.environ.get("REX_AI_IGNORE_PATTERN", "")
+        if extra_pattern is None
+        else extra_pattern
+    ).strip()
+    if user_pattern:
+        try:
+            if re.search(user_pattern, text, re.IGNORECASE):
+                return True
+        except re.error:
+            _log_debug("invalid REX_AI_IGNORE_PATTERN regex ignored")
+
+    return False
+
+
+def _extract_base_command(cmd: str) -> str:
+    """Extract the primary executable basename from a shell command string."""
+    tokens = (cmd or "").strip().split()
+    idx = 0
+    while idx < len(tokens):
+        tok = tokens[idx]
+        if _ENV_PREFIX_RE.match(tok):
+            idx += 1
+            continue
+        base = os.path.basename(tok).lower()
+        if base in _WRAPPER_COMMANDS:
+            idx += 1
+            while idx < len(tokens) and tokens[idx].startswith("-"):
+                idx += 1
+            continue
+        return base
+    return ""
+
+
+def should_trigger_proactive(
+    last_cmd: str,
+    exit_code: int,
+    mode: str,
+    ignore_pattern: str | None = None,
+) -> tuple[bool, str]:
+    """Decide whether proactive mode should run and return (eligible, reason)."""
+    normalized_mode = (mode or DEFAULT_PROACTIVE_MODE).strip().lower()
+    if normalized_mode not in {"smart", "errors", "all", "off"}:
+        normalized_mode = DEFAULT_PROACTIVE_MODE
+
+    if normalized_mode == "off":
+        return False, "proactive_off"
+
+    stripped = (last_cmd or "").strip()
+    if not stripped:
+        return False, "empty_command"
+
+    if is_sensitive_command(stripped, extra_pattern=ignore_pattern):
+        return False, "sensitive_command"
+
+    if normalized_mode == "errors":
+        if exit_code != 0:
+            return True, "non_zero_exit"
+        return False, "errors_only_mode"
+
+    base_cmd = _extract_base_command(stripped)
+    if exit_code == 0 and base_cmd in TRIVIAL_COMMANDS:
+        return False, "trivial_command"
+
+    if exit_code != 0:
+        return True, "non_zero_exit"
+
+    if normalized_mode == "smart":
+        if base_cmd in HIGH_SIGNAL_COMMANDS:
+            return True, "high_signal_command"
+        return False, "low_signal_command"
+
+    return True, "all_mode"
+
+
+def strip_ansi(text: str) -> str:
+    """Remove ANSI CSI/OSC/control escape sequences from terminal capture text."""
+    return ANSI_ESCAPE_RE.sub("", text or "")
+
+
+def redact_secrets(text: str) -> str:
+    """Redact tokens, private keys, URL credentials, and secret assignments."""
+    if not text:
+        return ""
+    result = text
+    for pattern, replacement in REDACTION_RULES:
+        result = pattern.sub(replacement, result)
+    return result
+
+
+def get_api_key(
+    use_keychain: bool | None = None,
+    keychain_service: str | None = None,
+) -> tuple[str, str]:
+    """Resolve Gemini API key from env or optional macOS Keychain lookup."""
+    rex_key = os.environ.get("REX_AI_API_KEY", "").strip()
+    if rex_key:
+        return rex_key, "env:REX_AI_API_KEY"
+
+    gemini_key = os.environ.get("GEMINI_API_KEY", "").strip()
+    if gemini_key:
+        return gemini_key, "env:GEMINI_API_KEY"
+
+    if use_keychain is None:
+        use_keychain = os.environ.get("REX_AI_USE_KEYCHAIN", "0").strip() == "1"
+
+    if not use_keychain:
+        return "", "none"
+
+    service = (
+        os.environ.get("REX_AI_KEYCHAIN_SERVICE", DEFAULT_KEYCHAIN_SERVICE)
+        if keychain_service is None
+        else keychain_service
+    ).strip() or DEFAULT_KEYCHAIN_SERVICE
+
+    try:
+        proc = subprocess.run(
+            ["security", "find-generic-password", "-s", service, "-w"],
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            timeout=1.0,
+            check=False,
+        )
+        if proc.returncode == 0:
+            secret = proc.stdout.strip()
+            if secret:
+                return secret, "keychain"
+    except (OSError, subprocess.SubprocessError) as exc:
+        _log_debug(f"keychain lookup failed: {exc}")
+
+    return "", "none"
+
+
+def resolve_rex_binary(rex_bin: str | None = None) -> str | None:
+    """Return path to the rex CLI binary if available."""
+    candidate = (
+        os.environ.get("REX_AI_REX_BIN", "") if rex_bin is None else rex_bin
+    ).strip()
+    if candidate:
+        if os.path.isfile(candidate) and os.access(candidate, os.X_OK):
+            return candidate
+        return None
+    return shutil.which("rex")
+
+
+def capture_rex_screen(
+    block_id: str,
+    max_lines: int = DEFAULT_CAPTURE_LINES,
+    max_chars: int = DEFAULT_CAPTURE_CHARS,
+    rex_bin: str | None = None,
+) -> str:
+    """Capture screen/scrollback tail for the active Rex block without autostart."""
+    if not block_id:
+        return ""
+    resolved_bin = resolve_rex_binary(rex_bin)
+    if not resolved_bin:
+        return ""
+
+    cmd = [
+        resolved_bin,
+        "capture",
+        "--autostart=false",
+        "--timeout=1s",
+        "--format=text",
+        "--trim",
+        "--unwrap",
+        "-b",
+        block_id,
+    ]
+    try:
+        proc = subprocess.run(
+            cmd,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            timeout=1.5,
+            check=False,
+        )
+    except (OSError, subprocess.SubprocessError) as exc:
+        _log_debug(f"rex capture failed: {exc}")
+        return ""
+
+    if proc.returncode != 0:
+        _log_debug(f"rex capture exited {proc.returncode}")
+        return ""
+
+    cleaned = strip_ansi(proc.stdout)
+    lines = cleaned.splitlines()
+    if max_lines > 0 and len(lines) > max_lines:
+        lines = lines[-max_lines:]
+    tail = "\n".join(lines).strip()
+    if max_chars > 0 and len(tail) > max_chars:
+        tail = tail[-max_chars:]
+    return tail
+
+
+def _clean_history_lines(history: str, limit: int = 5) -> str:
+    lines = [line.strip() for line in (history or "").splitlines() if line.strip()]
+    if limit > 0 and len(lines) > limit:
+        lines = lines[-limit:]
+    return "\n".join(redact_secrets(line) for line in lines)
+
+
+def build_gemini_payload(
+    mode: str,
+    model: str,
+    cwd: str,
+    last_cmd: str,
+    exit_code: int,
+    buffer: str,
+    history: str,
+    terminal_output: str,
+) -> dict:
+    """Build a compact, redacted Gemini generateContent request payload."""
+    redacted_last_cmd = redact_secrets(last_cmd.strip())
+    redacted_history = _clean_history_lines(history)
+    redacted_buffer = redact_secrets(buffer.strip())
+    redacted_output = redact_secrets(terminal_output.strip())
+
+    if mode == "manual":
+        system_instruction = (
+            "You are an expert macOS Zsh command assistant inside Rex terminal.\n"
+            "Rules:\n"
+            "1. Output ONLY a single-line raw Zsh command. No markdown, no backticks, "
+            "no explanation, no leading '$' or '%'.\n"
+            "2. If current_buffer is natural language (Portuguese or English, with or "
+            "without leading '#'), translate it into a safe single-line shell command.\n"
+            "3. If current_buffer is a partial shell command, output the full completed "
+            "command starting with the exact current_buffer prefix when valid.\n"
+            "4. If current_buffer is empty, suggest the single best next command from "
+            "the terminal output, history, and cwd.\n"
+            "5. Never suggest destructive commands (rm -rf, mkfs, dd, git push --force, "
+            "git reset --hard, diskutil erase, etc.).\n"
+            "6. If no useful command applies, output strictly: NONE"
+        )
+    else:
+        system_instruction = (
+            "You are a proactive macOS Zsh next-command predictor inside Rex terminal.\n"
+            "Rules:\n"
+            "1. Output ONLY a single-line raw Zsh command. No markdown, no backticks, "
+            "no explanation, no leading '$' or '%'.\n"
+            "2. If exit_code != 0, use terminal_output to suggest the most likely fix "
+            "or diagnostic command.\n"
+            "3. If exit_code == 0, suggest a high-confidence logical next command, or "
+            "output strictly NONE if nothing obvious helps.\n"
+            "4. Never repeat last_cmd verbatim when exit_code == 0.\n"
+            "5. Never suggest destructive commands (rm -rf, mkfs, dd, git push --force, "
+            "git reset --hard, diskutil erase, etc.)."
+        )
+
+    parts = [
+        f"cwd: {cwd}",
+        f"exit_code: {exit_code}",
+        f"last_cmd: {redacted_last_cmd or '(none)'}",
+    ]
+    if mode == "manual":
+        parts.append(f"current_buffer: {redacted_buffer or '(empty)'}")
+    if redacted_history:
+        parts.append(f"recent_history:\n{redacted_history}")
+    if redacted_output:
+        parts.append(f"terminal_output:\n{redacted_output}")
+
+    generation_config: dict = {
+        "temperature": 0.1,
+        "maxOutputTokens": 120,
+    }
+    lower_model = (model or "").lower()
+    if lower_model.startswith("gemini-3"):
+        generation_config["thinkingConfig"] = {"thinkingLevel": "MINIMAL"}
+    elif lower_model.startswith("gemini-2.5"):
+        generation_config["thinkingConfig"] = {"thinkingBudget": 0}
+
+    return {
+        "systemInstruction": {"parts": [{"text": system_instruction}]},
+        "contents": [{"role": "user", "parts": [{"text": "\n\n".join(parts)}]}],
+        "generationConfig": generation_config,
+    }
+
+
+def extract_text_from_gemini_response(data: dict) -> str:
+    """Extract non-thought text from a Gemini generateContent JSON response."""
+    candidates = data.get("candidates")
+    if not isinstance(candidates, list) or not candidates:
+        return ""
+    content = candidates[0].get("content") or {}
+    parts = content.get("parts")
+    if not isinstance(parts, list):
+        return ""
+    texts = [
+        part.get("text", "")
+        for part in parts
+        if isinstance(part, dict)
+        and not part.get("thought")
+        and isinstance(part.get("text"), str)
+    ]
+    return "\n".join(texts).strip()
+
+
+def sanitize_suggestion(
+    raw: str,
+    mode: str,
+    last_cmd: str = "",
+    exit_code: int = 0,
+) -> str:
+    """Clean and validate an LLM suggestion to a safe single-line shell command."""
+    if not raw:
+        return ""
+
+    text = raw.strip()
+    if text.startswith("```"):
+        text = re.sub(r"^```[A-Za-z0-9_-]*\s*\n?", "", text)
+        text = re.sub(r"\n?```\s*$", "", text)
+        text = text.strip()
+
+    first_line = ""
+    for line in text.splitlines():
+        candidate = line.strip()
+        if not candidate or candidate.startswith("```"):
+            continue
+        first_line = candidate
+        break
+
+    if not first_line:
+        return ""
+
+    if (
+        first_line.startswith("`")
+        and first_line.endswith("`")
+        and first_line.count("`") == 2
+    ):
+        first_line = first_line[1:-1].strip()
+
+    first_line = re.sub(r"^(?:\$|%)\s+", "", first_line).strip()
+
+    if (
+        len(first_line) >= 2
+        and first_line[0] == first_line[-1]
+        and first_line[0] in {'"', "'"}
+        and first_line.count(first_line[0]) == 2
+    ):
+        first_line = first_line[1:-1].strip()
+
+    if not first_line or first_line.upper() == "NONE":
+        return ""
+
+    if len(first_line) > MAX_SUGGESTION_CHARS:
+        return ""
+
+    if any(ord(ch) < 32 or ord(ch) == 127 for ch in first_line):
+        return ""
+
+    if mode == "proactive":
+        if exit_code == 0 and last_cmd.strip() and first_line == last_cmd.strip():
+            return ""
+        for pattern in DESTRUCTIVE_COMMAND_PATTERNS:
+            if pattern.search(first_line):
+                return ""
+
+    return first_line
+
+
+def call_gemini(
+    api_key: str,
+    model: str,
+    payload: dict,
+    timeout: float,
+    api_base_url: str = DEFAULT_API_BASE_URL,
+) -> str:
+    """Send generateContent request to Gemini REST API using x-goog-api-key header."""
+    endpoint = f"{api_base_url.rstrip('/')}/models/{model}:generateContent"
+    body_bytes = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(
+        endpoint,
+        data=body_bytes,
+        headers={
+            "Content-Type": "application/json",
+            "x-goog-api-key": api_key,
+        },
+        method="POST",
+    )
+
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            raw_body = resp.read().decode("utf-8", errors="replace")
+    except urllib.error.HTTPError as exc:
+        err_snippet = ""
+        try:
+            err_snippet = exc.read(240).decode("utf-8", errors="replace").strip()
+        except OSError:
+            pass
+        _log_debug(f"gemini HTTP error: {exc.code} {err_snippet}".strip())
+        return ""
+    except (urllib.error.URLError, TimeoutError, OSError) as exc:
+        _log_debug(f"gemini network error: {type(exc).__name__}")
+        return ""
+
+    try:
+        parsed = json.loads(raw_body)
+    except json.JSONDecodeError:
+        _log_debug("gemini returned invalid JSON")
+        return ""
+
+    return extract_text_from_gemini_response(parsed)
+
+
+def format_status(cwd: str, block_id: str) -> str:
+    """Return human-readable plugin status without exposing any secrets."""
+    enabled = os.environ.get("REX_AI_ENABLED", "1")
+    model = os.environ.get("REX_AI_MODEL", DEFAULT_MODEL).strip() or DEFAULT_MODEL
+    proactive_mode = (
+        os.environ.get("REX_AI_PROACTIVE_MODE", DEFAULT_PROACTIVE_MODE).strip()
+        or DEFAULT_PROACTIVE_MODE
+    )
+    rex_bin = resolve_rex_binary()
+    _, key_source = get_api_key()
+    key_label = {
+        "env:REX_AI_API_KEY": "configured (REX_AI_API_KEY)",
+        "env:GEMINI_API_KEY": "configured (GEMINI_API_KEY)",
+        "keychain": "configured (macOS Keychain)",
+        "none": "NOT CONFIGURED",
+    }.get(key_source, "NOT CONFIGURED")
+    opt_out = "active (.no-rex-ai)" if has_opt_out_marker(cwd) else "none"
+    inside_rex = f"yes (REX_BLOCK={block_id})" if block_id else "no"
+
+    lines = [
+        "rex-ai-suggest status:",
+        f"  enabled:        {enabled}",
+        f"  model:          {model}",
+        f"  proactive_mode: {proactive_mode}",
+        f"  inside_rex:     {inside_rex}",
+        f"  rex_binary:     {rex_bin or 'not found'}",
+        f"  api_key:        {key_label}",
+        f"  opt_out_marker: {opt_out}",
+    ]
+    return "\n".join(lines)
+
+
+def _build_arg_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        prog="rex-ai-suggest",
+        description="Gemini-backed command suggestion helper for Rex + Zsh.",
+    )
+    parser.add_argument(
+        "--mode",
+        choices=("proactive", "manual"),
+        default="proactive",
+    )
+    parser.add_argument("--cwd", default=os.getcwd())
+    parser.add_argument("--last-cmd", default="")
+    parser.add_argument("--exit-code", type=int, default=0)
+    parser.add_argument("--buffer", default="")
+    parser.add_argument("--history", default="")
+    parser.add_argument("--block", default="")
+    parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--status", action="store_true")
+    parser.add_argument("--no-capture", action="store_true")
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    """CLI entrypoint."""
+    args = _build_arg_parser().parse_args(argv)
+    block_id = (args.block or os.environ.get("REX_BLOCK", "")).strip()
+
+    if args.status:
+        print(format_status(args.cwd, block_id))
+        return 0
+
+    model = os.environ.get("REX_AI_MODEL", DEFAULT_MODEL).strip() or DEFAULT_MODEL
+    proactive_mode = (
+        os.environ.get("REX_AI_PROACTIVE_MODE", DEFAULT_PROACTIVE_MODE).strip()
+        or DEFAULT_PROACTIVE_MODE
+    )
+    api_base_url = (
+        os.environ.get("REX_AI_API_BASE_URL", DEFAULT_API_BASE_URL).strip()
+        or DEFAULT_API_BASE_URL
+    )
+    capture_lines = _parse_int_env("REX_AI_CAPTURE_LINES", DEFAULT_CAPTURE_LINES)
+    capture_chars = _parse_int_env("REX_AI_CAPTURE_CHARS", DEFAULT_CAPTURE_CHARS)
+    default_timeout = 4.0 if args.mode == "proactive" else 8.0
+    timeout = _parse_float_env("REX_AI_TIMEOUT", default_timeout)
+
+    opt_out = has_opt_out_marker(args.cwd)
+    sensitive_last_cmd = is_sensitive_command(args.last_cmd)
+
+    if args.mode == "proactive":
+        if opt_out:
+            if args.dry_run:
+                print(
+                    json.dumps(
+                        {"triggered": False, "reason": "opt_out_marker", "payload": None},
+                        ensure_ascii=False,
+                        indent=2,
+                    )
+                )
+            return 0
+
+        eligible, reason = should_trigger_proactive(
+            args.last_cmd, args.exit_code, proactive_mode
+        )
+        if not eligible:
+            if args.dry_run:
+                print(
+                    json.dumps(
+                        {"triggered": False, "reason": reason, "payload": None},
+                        ensure_ascii=False,
+                        indent=2,
+                    )
+                )
+            return 0
+    else:
+        reason = "manual_trigger"
+
+    skip_capture = (
+        args.no_capture
+        or opt_out
+        or sensitive_last_cmd
+        or (args.mode == "proactive" and not block_id)
+    )
+    terminal_output = (
+        ""
+        if skip_capture
+        else capture_rex_screen(
+            block_id, max_lines=capture_lines, max_chars=capture_chars
+        )
+    )
+
+    safe_last_cmd = "" if sensitive_last_cmd else args.last_cmd
+    payload = build_gemini_payload(
+        mode=args.mode,
+        model=model,
+        cwd=args.cwd,
+        last_cmd=safe_last_cmd,
+        exit_code=args.exit_code,
+        buffer=args.buffer,
+        history=args.history,
+        terminal_output=terminal_output,
+    )
+
+    if args.dry_run:
+        output = {
+            "triggered": True,
+            "reason": reason,
+            "mode": args.mode,
+            "model": model,
+            "endpoint": f"{api_base_url.rstrip('/')}/models/{model}:generateContent",
+            "capture_skipped": skip_capture,
+            "payload": payload,
+        }
+        print(json.dumps(output, ensure_ascii=False, indent=2))
+        return 0
+
+    api_key, _ = get_api_key()
+    if not api_key:
+        return 0
+
+    raw_response = call_gemini(
+        api_key=api_key,
+        model=model,
+        payload=payload,
+        timeout=timeout,
+        api_base_url=api_base_url,
+    )
+    suggestion = sanitize_suggestion(
+        raw_response,
+        mode=args.mode,
+        last_cmd=safe_last_cmd,
+        exit_code=args.exit_code,
+    )
+    if suggestion:
+        sys.stdout.write(suggestion)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
