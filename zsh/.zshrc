@@ -1,8 +1,8 @@
 # Caminho para a instalacao do Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 
-# Tema customizado que replica o lualine + roteki-theme do Neovim
-ZSH_THEME="roteki"
+# Tema desativado (usando o Starship como prompt)
+ZSH_THEME=""
 
 # Carrega definicoes extras do zsh-completions no fpath antes do compinit do Oh My Zsh
 fpath+="${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src"
@@ -18,11 +18,9 @@ plugins=(
 source "$ZSH/oh-my-zsh.sh"
 
 # ============================================================================
-# Configuracoes de Autocomplete e Sugestoes (Paleta Roteki)
+# Configuracoes de Autocomplete e Sugestoes
 # ============================================================================
 
-# Estilo da sugestao fantasma (usa palette.dim = #7E8B96 do Roteki)
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7E8B96"
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 ZSH_AUTOSUGGEST_USE_ASYNC=1
@@ -33,20 +31,10 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' special-dirs true
 
-# Cores do zsh-syntax-highlighting alinhadas ao Roteki Dark
+# Remove o sublinhado padrao em caminhos de pastas/arquivos do zsh-syntax-highlighting
 typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[command]='fg=#BCD1FF,bold'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=#BCD1FF,bold'
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=#3ab877,bold'
-ZSH_HIGHLIGHT_STYLES[function]='fg=#BCD1FF'
-ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=#3ab877,bold'
-ZSH_HIGHLIGHT_STYLES[precommand]='fg=#3ab877,underline'
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=#AFD8ED'
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=#AFD8ED'
-ZSH_HIGHLIGHT_STYLES[path]='fg=#d0d3d6,underline'
-ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#c2606d,bold'
-ZSH_HIGHLIGHT_STYLES[arg0]='fg=#BCD1FF'
-ZSH_HIGHLIGHT_STYLES[comment]='fg=#3c4349'
+ZSH_HIGHLIGHT_STYLES[path]='none'
+ZSH_HIGHLIGHT_STYLES[path_prefix]='none'
 
 # ============================================================================
 # Ferramentas, Runtimes e Variaveis de Ambiente
@@ -65,3 +53,7 @@ export PATH="$JAVA_HOME/bin:$PATH"
 # Android SDK
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin"
+
+# Inicializa o prompt Starship
+command -v starship &>/dev/null && eval "$(starship init zsh)"
+

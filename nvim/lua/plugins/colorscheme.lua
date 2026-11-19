@@ -16,6 +16,9 @@ end, { desc = '[R]eload [R]oteki Theme' })
 -- vim.pack.add { gh 'oskarnurm/koda.nvim' }
 
 -- Load the colorscheme here.
+require('roteki').setup {
+  transparent = true,
+}
 vim.cmd.colorscheme 'roteki'
 -- vim.cmd.colorscheme 'koda'
 
